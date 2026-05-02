@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@theme {
+	--color-canvas: #FDFCF8;
+	--color-lavender: #E3DEE8;
+	--color-mint: #DDEADD;
+	--color-blush: #F4E3E1;
+	--color-ink: #4A5056;
+	--color-slate: #737C84;
+
+	--font-serif: "Libre Baskerville", serif;
+	--font-sans: "Inter", sans-serif;
+}
+
+@layer base {
+	body {
+		background-color: var(--color-canvas);
+		color: var(--color-ink);
+		font-family: var(--font-sans);
+	}
+}
