@@ -1,26 +1,31 @@
 ---
+import { ClientRouter } from "astro:transitions";
 import "../styles/global.css";
 import Navigation from "../components/Navigation.jsx";
+
+const { bgClass = "bg-canvas text-ink" } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Revati's Studio</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
-            rel="stylesheet"
-        />
-    </head>
-    <body
-        class="min-h-screen relative selection:bg-lavender bg-canvas text-ink font-sans"
-    >
-        <Navigation client:load />
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Revati's Studio</title>
+		<ClientRouter />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
+			rel="stylesheet"/>
+	</head>
+	<body class={`min-h-screen relative selection:bg-lavender font-sans transition-colors duration-1000 ease-in-out ${bgClass}`}>
+		<div transition:persist>
+			<Navigation client:load />
+		</div>
 
-        <slot />
-    </body>
+		<main class="relative z-10">
+			<slot />
+		</main>
+	</body>
 </html>

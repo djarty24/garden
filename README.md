@@ -23,7 +23,9 @@ This is an hour by hour log of everything I worked on and when each feature was 
     * Added navbar fade in animation (reponsive on web and mobile)
     * Tweaked the homepage hero section design
     * Created a reusable layout for the rest of the pages and imported it in
-3. 
+3. Tweaking page navigation and building work page
+    * Created cutting board background for `work.astro`
+    * Made background transition + navbar transition
 
 ---
 <div align="center">
