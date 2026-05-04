@@ -19,7 +19,11 @@ This is an hour by hour log of everything I worked on and when each feature was 
     * Set up page navigation
     * Home pag hero section [WIP]
     * Mostly spend this time acclimating to the new framework as I've never used Astro before
-
+2. Finished page navigation
+    * Added navbar fade in animation (reponsive on web and mobile)
+    * Tweaked the homepage hero section design
+    * Created a reusable layout for the rest of the pages and imported it in
+3. 
 
 ---
 <div align="center">
