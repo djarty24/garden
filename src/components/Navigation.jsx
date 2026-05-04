@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Navigation() {
 	const [isOpen, setIsOpen] = useState(false);
-
 	const [isWorkPage, setIsWorkPage] = useState(false);
 
 	useEffect(() => {
@@ -13,9 +12,7 @@ export default function Navigation() {
 		};
 
 		checkPath();
-
 		document.addEventListener('astro:page-load', checkPath);
-
 		return () => document.removeEventListener('astro:page-load', checkPath);
 	}, []);
 
@@ -29,32 +26,41 @@ export default function Navigation() {
 		{ name: 'Contact', path: '/contact' }
 	];
 
-	const headerTextColor = isWorkPage ? 'text-canvas' : 'text-ink';
-	const headerSubTextColor = isWorkPage ? 'text-canvas/70' : 'text-slate/60';
+	const headerTextColor = (isWorkPage && !isOpen) ? 'text-canvas' : 'text-ink';
+	const headerSubTextColor = (isWorkPage && !isOpen) ? 'text-canvas/70' : 'text-slate/60';
 
 	return (
 		<>
 			<header className={`fixed top-0 left-0 right-0 w-full flex justify-between items-center p-8 z-50 pointer-events-none transition-colors duration-1000 ease-in-out`}>
 
-				<div className={`text-sm italic font-serif pointer-events-auto transition-colors duration-1000 ${headerSubTextColor}`}>
-					endlessly building
-				</div>
+				<a
+					href="https://github.com/djarty24"
+					target="_blank"
+					rel="noopener noreferrer"
+					className={`text-sm italic font-serif pointer-events-auto transition-colors duration-1000 hover:text-slate ${headerSubTextColor}`}>
+					building endlessly
+				</a>
 
-				<div className={`text-xl font-serif pointer-events-auto absolute left-1/2 -translate-x-1/2 transition-colors duration-1000 ${headerSubTextColor}`}>
-					my studio
-				</div>
+				<a
+					href="/"
+					className="absolute left-1/2 -translate-x-1/2 pointer-events-auto flex items-center justify-center"
+					aria-label="Return Home">
+					<img
+						src="/logo.png"
+						alt="My Studio Logo"
+						className="w-12 h-12 md:w-16 md:h-16 object-contain -rotate-6 transition-all duration-300 ease-out hover:rotate-0 hover:scale-110"/>
+				</a>
 
 				<button
 					onClick={() => setIsOpen(!isOpen)}
 					className={`w-8 h-8 flex items-center justify-center text-3xl pointer-events-auto transition-colors duration-1000 font-sans ${headerTextColor}`}
-					aria-label="Toggle Menu"
-				>
+					aria-label="Toggle Menu">
 					<motion.div
 						initial={false}
 						animate={{ rotate: isOpen ? 180 : 0 }}
 						transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
 					>
-						{isOpen ? '−' : '+'}
+						{isOpen ? '-' : '+'}
 					</motion.div>
 				</button>
 			</header>
@@ -68,7 +74,7 @@ export default function Navigation() {
 						transition={{ duration: 0.4 }}
 						className="fixed inset-0 bg-canvas/95 z-40 flex items-center justify-center"
 					>
-						<nav className="flex flex-col gap-4 text-center">
+						<nav className="flex flex-col gap-4 items-start">
 							{links.map((link, i) => (
 								<motion.a
 									key={link.name}

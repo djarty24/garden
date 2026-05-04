@@ -26,6 +26,13 @@ This is an hour by hour log of everything I worked on and when each feature was 
 3. Tweaking page navigation and building work page
     * Created cutting board background for `work.astro`
     * Made background transition + navbar transition
+4. Updated navigation bar and logo
+    * Created favicon and logo for the navbar
+    * Added tilt animation for RT image
+    * Fixed the navigation bar formatting so that it stays permanent
+    * Added navbar text animations to fade into white vs. gray so that it is visible
+5. 
+
 
 ---
 <div align="center">
