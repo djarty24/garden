@@ -41,6 +41,10 @@ This is an hour by hour log of everything I worked on and when each feature was 
     * Added a fade in animation for the hero section text
     * Page elements float to their spots!
     * Created a dummy about me section
+7. Finalized hero section, started about me section
+    * Added fun polaroid image hover effect for hero text
+    * Drafted introduction for about me section
+    * Removed the about me page and redirected all of the links to about me section of homepage
 
 ---
 <div align="center">

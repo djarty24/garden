@@ -4,9 +4,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 export default function Navigation() {
 	const [isOpen, setIsOpen] = useState(false);
 	const [isWorkPage, setIsWorkPage] = useState(false);
+	const [wordIndex, setWordIndex] = useState(0);
 
 	const actionWords = ["building", "experimenting", "iterating", "smiling", "creating", "tinkering", "exploring"];
-	const [wordIndex, setWordIndex] = useState(0);
 
 	useEffect(() => {
 		const checkPath = () => {
@@ -23,9 +23,23 @@ export default function Navigation() {
 		setWordIndex((prev) => (prev + 1) % actionWords.length);
 	};
 
+	// Smart link handler for the About section
+	const handleLinkClick = (e, path) => {
+		if (path === '/#about' && (window.location.pathname === '/' || window.location.pathname === '')) {
+			e.preventDefault();
+			setIsOpen(false);
+			const aboutSection = document.getElementById('about');
+			if (aboutSection) {
+				aboutSection.scrollIntoView({ behavior: 'smooth' });
+			}
+		} else {
+			setIsOpen(false);
+		}
+	};
+
 	const links = [
 		{ name: 'Home', path: '/' },
-		{ name: 'About', path: '/about' },
+		{ name: 'About', path: '/#about' },
 		{ name: 'Work', path: '/work' },
 		{ name: 'Garden', path: '/garden' },
 		{ name: 'Guest Book', path: '/guestbook' },
@@ -40,11 +54,12 @@ export default function Navigation() {
 		<>
 			<header className={`fixed top-0 left-0 right-0 w-full flex justify-between items-center p-8 z-50 pointer-events-none transition-colors duration-1000 ease-in-out`}>
 
-				<a
-					href="/"
+				<a 
+					href="/" 
 					onClick={handleWordCycle}
 					className={`text-sm italic font-serif pointer-events-auto transition-colors duration-1000 hover:text-ink ${headerSubTextColor} flex items-center`}
-					aria-label="Return Home">
+					aria-label="Return Home"
+				>
 					<span>endlessly&nbsp;</span>
 					<AnimatePresence mode="wait">
 						<motion.span
@@ -60,13 +75,13 @@ export default function Navigation() {
 					</AnimatePresence>
 				</a>
 
-				<a
+				<a 
 					href="/"
 					className="absolute left-1/2 -translate-x-1/2 pointer-events-auto flex items-center justify-center"
 					aria-label="Return Home"
 				>
-					<img
-						src="/logo.png"
+					<img 
+						src="/logo.png" 
 						alt="My Studio Logo"
 						className="w-12 h-12 md:w-16 md:h-16 object-contain -rotate-6 transition-all duration-300 ease-out hover:rotate-0 hover:scale-110"
 					/>
@@ -87,7 +102,6 @@ export default function Navigation() {
 				</button>
 			</header>
 
-			{/* THE FULL SCREEN MENU */}
 			<AnimatePresence>
 				{isOpen && (
 					<motion.div
@@ -107,7 +121,7 @@ export default function Navigation() {
 									exit={{ opacity: 0, y: 15 }}
 									transition={{ duration: 0.4, delay: i * 0.05, ease: [0.22, 1, 0.36, 1] }}
 									className="text-left leading-tight text-3xl md:text-4xl font-serif text-ink hover:text-slate transition-colors"
-									onClick={() => setIsOpen(false)}
+									onClick={(e) => handleLinkClick(e, link.path)}
 								>
 									{link.name}
 								</motion.a>

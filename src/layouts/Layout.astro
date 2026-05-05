@@ -7,7 +7,7 @@ const { bgClass = "bg-canvas text-ink" } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,14 +17,14 @@ const { bgClass = "bg-canvas text-ink" } = Astro.props;
 
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="icon" href="/favicon.png" type="image/png" />
 		<link
 			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
 			rel="stylesheet"
 		/>
-		<link rel="icon" type="image/png" href="/favicon.png" />
 	</head>
 	<body
-		class={`min-h-screen relative selection:bg-blush font-sans transition-colors duration-700 ease-in-out ${bgClass}`}
+		class={`min-h-screen relative selection:bg-mint font-sans transition-colors duration-700 ease-in-out ${bgClass}`}
 	>
 		<div transition:persist>
 			<Navigation client:load />

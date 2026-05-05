@@ -8,12 +8,32 @@ import Hero from "../components/Hero.jsx";
 		<Hero client:load />
 	</div>
 
-	<section id="about" class="min-h-screen flex flex-col items-center justify-center px-8 bg-canvas text-ink">
-		<div class="max-w-2xl mx-auto text-center">
-			<h2 class="text-3xl font-serif mb-6">A bit about me</h2>
-			<p class="font-sans leading-relaxed text-slate">
-				add later.
-			</p>
+	<section id="about" class="min-h-screen py-32 px-8 bg-canvas">
+		<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+			
+			<div class="flex flex-col gap-10">
+				<h2 class="text-4xl md:text-5xl font-serif text-ink">A Bit About Me</h2>
+				
+				<div class="flex flex-col gap-6 font-sans leading-relaxed text-ink text-lg max-w-xl">
+					<p>
+						I'm a high school senior based in the Bay Area, CA. As of now I spend most of my time researching BCIs, working on KiCad schematics (currently participating in Hack Club's Stasis event!), and probably over-engineering my desk setup when I should be doing homework. Any space where tech can be used for good, I'm there.
+					</p>
+					<p>
+						My work is often inspired by impressionist art and the tactile nature of analog objects. I believe in creating things that are fun and stretching my imagination. I hope to bring this philosophy to UCSD as a CS major this fall. No matter what, I'm endlessly building, experimenting, and problem solving.
+					</p>
+					<p>
+						When I'm not at my desk, you'll find me out for a run, taking photos with my digicam, or playing tabla to unwind.
+					</p>
+				</div>
+			</div>
+
+			<div class="w-full aspect-square lg:sticky lg:top-32 flex items-center justify-center rounded-2xl bg-white/20 border border-slate/5 overflow-hidden">
+				<div class="text-center p-12">
+					<p class="font-serif italic text-slate/40 text-sm mb-4">The Creative Corner</p>
+					<div class="w-24 h-px bg-slate/10 mx-auto"></div>
+				</div>
+			</div>
+
 		</div>
 	</section>
 </Layout>

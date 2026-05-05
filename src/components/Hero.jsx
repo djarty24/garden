@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 export default function Hero() {
 	const stage1Delay = 0;
@@ -7,6 +7,15 @@ export default function Hero() {
 	const stage3Delay = 1.6;
 
 	const [isSpinning, setIsSpinning] = useState(false);
+	
+	const [showNamePhoto, setShowNamePhoto] = useState(false);
+	const [showMakerPhoto, setShowMakerPhoto] = useState(false);
+	const [showIdeasPhoto, setShowIdeasPhoto] = useState(false);
+	
+	const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+	const [delayedPos, setDelayedPos] = useState({ x: 0, y: 0 });
+	
+	const animationFrameId = useRef(null);
 
 	const handleVinylClick = () => {
 		if (isSpinning) return;
@@ -23,17 +32,61 @@ export default function Hero() {
 		}, 1200);
 	};
 
+	const handleMouseMove = (e) => {
+		setMousePos({ x: e.clientX, y: e.clientY });
+	};
+
+	useEffect(() => {
+		const updateDelayedPos = () => {
+			setDelayedPos((prev) => {
+				const dx = mousePos.x - prev.x;
+				const dy = mousePos.y - prev.y;
+				const speed = 0.08; 
+				return {
+					x: prev.x + dx * speed,
+					y: prev.y + dy * speed,
+				};
+			});
+			animationFrameId.current = requestAnimationFrame(updateDelayedPos);
+		};
+
+		animationFrameId.current = requestAnimationFrame(updateDelayedPos);
+
+		return () => {
+			if (animationFrameId.current) {
+				cancelAnimationFrame(animationFrameId.current);
+			}
+		};
+	}, [mousePos]);
+
+	const photoStyle = {
+		left: `${delayedPos.x - 120}px`,
+		top: `${delayedPos.y - 80}px`,
+		opacity: 1,
+	};
+
+	// Intercept clicks on the About icon to smoothly scroll if we're already here
+	const handleAboutClick = (e) => {
+		e.preventDefault();
+		const aboutSection = document.getElementById('about');
+		if (aboutSection) {
+			aboutSection.scrollIntoView({ behavior: 'smooth' });
+		}
+	};
+
 	return (
 		<div className="w-full grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-16 lg:gap-24 items-center max-w-[90rem] mx-auto">
 			<nav className="flex flex-col gap-8 items-center lg:items-end w-full">
 				<motion.a 
-					href="/about" 
+					href="/#about" 
+					onClick={handleAboutClick}
 					initial={{ opacity: 0, x: 150, y: 100 }}
 					animate={{ opacity: 1, x: 48, y: 0 }}
 					transition={{ duration: 1, delay: stage3Delay, type: "spring", bounce: 0.3 }}
 					className="flex flex-col items-center gap-5 group"
 				>
-					<div className="w-20 h-24 flex items-center justify-center">
+					{/* Added shrink-0 to prevent huge scaling during transitions */}
+					<div className="w-20 h-24 shrink-0 flex items-center justify-center">
 						<img src="/hero/about-icon.png" alt="About" className="w-full h-full object-contain drop-shadow-sm transition-all duration-300 ease-out group-hover:scale-[1.35] group-hover:-rotate-12 group-hover:drop-shadow-md"/>
 					</div>
 					<span className="text-base text-ink font-serif italic">About</span>
@@ -46,7 +99,7 @@ export default function Hero() {
 					transition={{ duration: 1, delay: stage3Delay + 0.1, type: "spring", bounce: 0.3 }}
 					className="flex flex-col items-center gap-5 group"
 				>
-					<div className="w-20 h-24 flex items-center justify-center">
+					<div className="w-20 h-24 shrink-0 flex items-center justify-center">
 						<img src="/hero/work-icon.png" alt="Work" className="w-full h-full object-contain drop-shadow-sm transition-all duration-300 ease-out group-hover:scale-[1.35] group-hover:-rotate-12 group-hover:drop-shadow-md"/>
 					</div>
 					<span className="text-base text-ink font-serif italic">Work</span>
@@ -59,14 +112,14 @@ export default function Hero() {
 					transition={{ duration: 1, delay: stage3Delay + 0.2, type: "spring", bounce: 0.3 }}
 					className="flex flex-col items-center gap-5 group"
 				>
-					<div className="w-20 h-24 flex items-center justify-center">
+					<div className="w-20 h-24 shrink-0 flex items-center justify-center">
 						<img src="/hero/cv-icon.png" alt="Download CV" className="w-full h-full object-contain drop-shadow-sm transition-all duration-300 ease-out group-hover:scale-[1.35] group-hover:-rotate-12 group-hover:drop-shadow-md"/>
 					</div>
 					<span className="text-base text-ink font-serif italic">Download CV</span>
 				</motion.a>
 			</nav>
 
-			<main className="text-center px-4 flex flex-col items-center max-w-xl mx-auto w-full">
+			<main onMouseMove={handleMouseMove} className="text-center px-4 flex flex-col items-center max-w-xl mx-auto w-full relative z-10">
 				<motion.p 
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
@@ -82,7 +135,30 @@ export default function Hero() {
 					transition={{ duration: 0.8, delay: stage1Delay, ease: "easeOut" }}
 					className="text-4xl leading-normal font-serif text-ink"
 				>
-					Hi, I&#x2019;m Revati, a student, developer, and <span className="underline decoration-1 underline-offset-8 decoration-slate/50">maker</span> exploring <span className="underline decoration-1 underline-offset-8 decoration-slate/50">unconventional ideas</span> through code.
+					Hi, I&#x2019;m&nbsp;
+					<span 
+						className="squiggly-underline cursor-none text-ink hover:text-slate transition-colors" 
+						onMouseEnter={() => setShowNamePhoto(true)}
+						onMouseLeave={() => setShowNamePhoto(false)}
+					>
+						Revati
+					</span>, a student, developer, and&nbsp;
+					<span 
+						className="squiggly-underline cursor-none text-ink hover:text-slate transition-colors" 
+						onMouseEnter={() => setShowMakerPhoto(true)}
+						onMouseLeave={() => setShowMakerPhoto(false)}
+					>
+						maker
+					</span>&nbsp;exploring&nbsp;
+					<span 
+						className="cursor-none text-ink hover:text-slate transition-colors" 
+						onMouseEnter={() => setShowIdeasPhoto(true)}
+						onMouseLeave={() => setShowIdeasPhoto(false)}
+					>
+						<span className="squiggly-underline">unconventional</span>
+						<br />
+						<span className="squiggly-underline">ideas</span>
+					</span>&nbsp;through code.
 				</motion.h1>
 
 				<motion.div 
@@ -135,6 +211,33 @@ export default function Hero() {
 						</motion.div>
 					</div>
 				</motion.div>
+
+				{showNamePhoto && (
+					<img 
+						src="/hero/polaroid.png" 
+						alt="A polaroid photo of me" 
+						className="fixed w-48 h-auto object-contain pointer-events-none drop-shadow-lg z-50 rounded -rotate-6"
+						style={photoStyle} 
+					/>
+				)}
+
+				{showMakerPhoto && (
+					<img 
+						src="/hero/maker-preview.png" 
+						alt="A preview of my maker projects" 
+						className="fixed w-48 h-auto object-contain pointer-events-none drop-shadow-lg z-50 rounded rotate-6"
+						style={photoStyle} 
+					/>
+				)}
+
+				{showIdeasPhoto && (
+					<img 
+						src="/hero/unconventional-ideas-preview.png" 
+						alt="A preview of unconventional ideas" 
+						className="fixed w-48 h-auto object-contain pointer-events-none drop-shadow-lg z-50 rounded -rotate-6"
+						style={photoStyle} 
+					/>
+				)}
 			</main>
 
 			<nav className="flex flex-col gap-8 items-center lg:items-start w-full">
@@ -145,7 +248,7 @@ export default function Hero() {
 					transition={{ duration: 1, delay: stage3Delay, type: "spring", bounce: 0.3 }}
 					className="flex flex-col items-center gap-5 group"
 				>
-					<div className="w-20 h-24 flex items-center justify-center">
+					<div className="w-20 h-24 shrink-0 flex items-center justify-center">
 						<img src="/hero/garden-icon.png" alt="Garden" className="w-full h-full object-contain drop-shadow-sm transition-all duration-300 ease-out group-hover:scale-[1.35] group-hover:rotate-12 group-hover:drop-shadow-md"/>
 					</div>
 					<span className="text-base text-ink font-serif italic">Garden</span>
@@ -158,7 +261,7 @@ export default function Hero() {
 					transition={{ duration: 1, delay: stage3Delay + 0.1, type: "spring", bounce: 0.3 }}
 					className="flex flex-col items-center gap-5 group"
 				>
-					<div className="w-20 h-24 flex items-center justify-center">
+					<div className="w-20 h-24 shrink-0 flex items-center justify-center">
 						<img src="/hero/guestbook-icon.png" alt="Guest Book" className="w-full h-full object-contain drop-shadow-sm transition-all duration-300 ease-out group-hover:scale-[1.35] group-hover:rotate-12 group-hover:drop-shadow-md"/>
 					</div>
 					<span className="text-base text-ink font-serif italic">Guest Book</span>
@@ -171,7 +274,7 @@ export default function Hero() {
 					transition={{ duration: 1, delay: stage3Delay + 0.2, type: "spring", bounce: 0.3 }}
 					className="flex flex-col items-center gap-5 group"
 				>
-					<div className="w-20 h-24 flex items-center justify-center">
+					<div className="w-20 h-24 shrink-0 flex items-center justify-center">
 						<img src="/hero/contact-icon.png" alt="Contact" className="w-full h-full object-contain drop-shadow-sm transition-all duration-300 ease-out group-hover:scale-[1.35] group-hover:rotate-12 group-hover:drop-shadow-md"/>
 					</div>
 					<span className="text-base text-ink font-serif italic">Contact</span>
