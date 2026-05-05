@@ -31,7 +31,11 @@ This is an hour by hour log of everything I worked on and when each feature was 
     * Added tilt animation for RT image
     * Fixed the navigation bar formatting so that it stays permanent
     * Added navbar text animations to fade into white vs. gray so that it is visible
-5. 
+5. More navbar animations + hero section work
+    * Added 5/6 hero images (still looking for the work section one)
+    * Added a changing word bank for the "endlessly ___" part of the navbar
+        * Just a fun feature to make the site more interactive!
+    * Animated home page images so that on hover they zoom in + tilt towards the center!
 
 
 ---
