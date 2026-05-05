@@ -36,7 +36,11 @@ This is an hour by hour log of everything I worked on and when each feature was 
     * Added a changing word bank for the "endlessly ___" part of the navbar
         * Just a fun feature to make the site more interactive!
     * Animated home page images so that on hover they zoom in + tilt towards the center!
-
+6. Fixed up hero section (99% done)
+    * Added a vinyl scroll down button (this took an embarrasingly long amount of time)
+    * Added a fade in animation for the hero section text
+    * Page elements float to their spots!
+    * Created a dummy about me section
 
 ---
 <div align="center">

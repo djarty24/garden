@@ -1,92 +1,19 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.jsx";
 ---
 
 <Layout bgClass="bg-canvas text-ink">
-	<div
-		class="min-h-screen flex flex-col justify-center items-center pt-32 pb-20 px-8"
-	>
-		<div
-			class="w-full grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-16 lg:gap-24 items-center max-w-360 mx-auto"
-		>
-			<nav class="flex flex-col gap-8 items-center lg:items-end w-full">
-				<a href="/about" class="flex flex-col items-center gap-5 group translate-x-12">
-					<div class="w-20 h-24 flex items-center justify-center">
-						<img
-							src="/hero/about-icon.png"
-							alt="About"
-							class="w-full h-full object-contain drop-shadow-sm transition-all duration-300 ease-out group-hover:scale-[1.35] group-hover:-rotate-12 group-hover:drop-shadow-md"/>
-					</div>
-					<span class="text-base text-ink font-serif italic">About</span>
-				</a>
-
-				<a href="/work" class="flex flex-col items-center gap-5 group -translate-x-4">
-					<div class="w-20 h-24 flex items-center justify-center">
-						<img
-							src="/hero/about-icon.png"
-							alt="Work"
-							class="w-full h-full object-contain drop-shadow-sm transition-all duration-300 ease-out group-hover:scale-[1.35] group-hover:-rotate-12 group-hover:drop-shadow-md"/>
-					</div>
-					<span class="text-base text-ink font-serif italic">Work</span>
-				</a>
-
-				<a href="/cv" class="flex flex-col items-center gap-5 group translate-x-12">
-					<div class="w-20 h-24 flex items-center justify-center">
-						<img
-							src="/hero/cv-icon.png"
-							alt="Download CV"
-							class="w-full h-full object-contain drop-shadow-sm transition-all duration-300 ease-out group-hover:scale-[1.35] group-hover:-rotate-12 group-hover:drop-shadow-md"/>
-					</div>
-					<span class="text-base text-ink font-serif italic">Download CV</span>
-				</a>
-			</nav>
-
-			<main class="text-center px-4 flex flex-col items-center max-w-xl mx-auto w-full">
-				<p class="text-sm mb-8 text-slate italic font-serif"> Welcome to my digital home!</p>
-
-				<h1 class="text-4xl leading-normal font-serif text-ink">
-					Hi, I&#x2019;m Revati, a student, developer, and
-					<span class="underline decoration-1 underline-offset-8 decoration-slate/50">maker</span>
-					exploring
-					<span class="underline decoration-1 underline-offset-8 decoration-slate/50">unconventional ideas</span>
-					through code.
-				</h1>
-
-				<a href="/about" class="my-8 px-8 py-2.5 border border-slate/50 rounded-full text-xs uppercase tracking-widest text-ink hover:bg-slate/10 transition-colors font-sans">Let's go!</a>
-			</main>
-
-			<nav class="flex flex-col gap-8 items-center lg:items-start w-full">
-				<a href="/garden" class="flex flex-col items-center gap-5 group -translate-x-12">
-					<div class="w-24 h-24 flex items-center justify-center">
-						<img
-							src="/hero/garden-icon.png"
-							alt="Garden"
-							class="w-full h-full object-contain drop-shadow-sm transition-all duration-300 ease-out group-hover:scale-[1.35] group-hover:rotate-12 group-hover:drop-shadow-md"/>
-					</div>
-					<span class="text-base text-ink font-serif italic">Garden</span>
-				</a>
-
-				<a href="/guestbook" class="flex flex-col items-center gap-5 group translate-x-4">
-					<div class="w-20 h-24 flex items-center justify-center">
-						<img
-							src="/hero/guestbook-icon.png"
-							alt="Guest Book"
-							class="w-full h-full object-contain drop-shadow-sm transition-all duration-300 ease-out group-hover:scale-[1.35] group-hover:rotate-12 group-hover:drop-shadow-md"/>
-					</div>
-					<span class="text-base text-ink font-serif italic">Guest Book</span>
-				</a>
-
-				<a href="/contact" class="flex flex-col items-center gap-5 group -translate-x-12">
-					<div class="w-20 h-24 flex items-center justify-center">
-						<img
-							src="/hero/contact-icon.png"
-							alt="Contact"
-							class="w-full h-full object-contain drop-shadow-sm transition-all duration-300 ease-out group-hover:scale-[1.35] group-hover:rotate-12 group-hover:drop-shadow-md"/>
-					</div>
-					<span class="text-base text-ink font-serif italic">Contact</span>
-				</a>
-			</nav>
-		</div>
-
+	<div class="min-h-screen flex flex-col justify-center items-center pt-28 pb-20 px-8">
+		<Hero client:load />
 	</div>
+
+	<section id="about" class="min-h-screen flex flex-col items-center justify-center px-8 bg-canvas text-ink">
+		<div class="max-w-2xl mx-auto text-center">
+			<h2 class="text-3xl font-serif mb-6">A bit about me</h2>
+			<p class="font-sans leading-relaxed text-slate">
+				add later.
+			</p>
+		</div>
+	</section>
 </Layout>
