@@ -19,37 +19,33 @@ body {
 }
 
 @layer utilities {
-.bg-cutting-mat {
-	background-color: #214c33; 
-	background-image: 
-	linear-gradient(rgba(255, 255, 255, 0.25) 1px, transparent 1px),
-	linear-gradient(90deg, rgba(255, 255, 255, 0.25) 1px, transparent 1px),
-	linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-	linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-	background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
-	background-position: -1px -1px;
-}
+	.bg-cutting-mat {
+		background-color: #214c33; 
+		background-image: 
+		linear-gradient(rgba(255, 255, 255, 0.25) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(255, 255, 255, 0.25) 1px, transparent 1px),
+		linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+		background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+		background-position: -1px -1px;
+	}
 
-.squiggly-underline {
-	position: relative;
-	display: inline-block;
-}
+	.squiggly-underline {
+		position: relative;
+		display: inline-block;
+	}
 
-.squiggly-underline::after {
-	content: '';
-	position: absolute;
-	bottom: -8px;
-	left: 0;
-	width: 100%;
-	height: 12px;
-	background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 12" xmlns="http://www.w3.org/2000/svg"><path d="M 0,6 C 10,0 15,12 25,6 C 35,0 40,12 50,6 C 60,0 65,12 75,6 C 85,0 90,12 100,6" stroke="%23737C84" stroke-width="1.5" fill="none"/></svg>');
-	background-size: 100px 12px;
-	background-repeat: repeat-x;
-	opacity: 0.5;
-}
+	.squiggly-underline::after {
+		content: '';
+		position: absolute;
+		bottom: -8px;
+		left: 0;
+		width: 100%;
+		height: 12px;
+		background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 12" xmlns="http://www.w3.org/2000/svg"><path d="M 0,6 C 10,0 15,12 25,6 C 35,0 40,12 50,6 C 60,0 65,12 75,6 C 85,0 90,12 100,6" stroke="%23737C84" stroke-width="1.5" fill="none"/></svg>');
+		background-size: 100px 12px;
+		background-repeat: repeat-x;
+		opacity: 0.5;
+	}
 
-/* .squiggly-underline:hover::after {
-	opacity: 0.8;
-	transition: opacity 0.3s ease;
-} */
 }

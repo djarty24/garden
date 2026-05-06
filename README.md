@@ -57,6 +57,11 @@ This is an hour by hour log of everything I worked on and when each feature was 
     * Designed picture frames for each of my selected works
     * Added project descriptions
     * Created fade in & out animations controlled by mouse scroll
+11. Finalized selected works project gallery and started contact
+    * Added tilt animation to picture frames
+    * Added "explore the rest of my projects" button
+    * Started designing project footer/contact element
+12. 
 
 ---
 <div align="center">

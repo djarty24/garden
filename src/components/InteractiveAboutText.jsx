@@ -101,7 +101,7 @@ export default function InteractiveAboutText() {
 				<img 
 					src="/about/fun-preview.png" 
 					alt="Fun Preview" 
-					className="fixed w-48 h-auto object-contain pointer-events-none drop-shadow-lg z-50 rounded rotate-6"
+					className="fixed w-48 h-auto object-contain pointer-events-none drop-shadow-lg z-50 rounded rotate-16"
 					style={photoStyle} 
 				/>
 			)}
