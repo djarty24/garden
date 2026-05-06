@@ -49,6 +49,10 @@ This is an hour by hour log of everything I worked on and when each feature was 
     * Finalized description for left side column
     * Created a swipe through crate for users to explore my favorite records!
     * Added hyper links to descriptions and the same hover effect as hero section
+9. Finished about me section, started selected works section of home page
+    * Added the hyper link effect for about me
+    * Created SelectedWorks.jsx to show the museum gallery style works
+10. 
 
 ---
 <div align="center">

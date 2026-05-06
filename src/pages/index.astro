@@ -2,6 +2,8 @@
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.jsx";
 import DraggableCrate from "../components/DraggableCrate.jsx";
+import InteractiveAboutText from "../components/InteractiveAboutText.jsx";
+import SelectedWorks from "../components/SelectedWorks.jsx";
 ---
 
 <Layout bgClass="bg-canvas text-ink">
@@ -14,18 +16,7 @@ import DraggableCrate from "../components/DraggableCrate.jsx";
 			
 			<div class="flex flex-col gap-10">
 				<h2 class="text-3xl md:text-4xl font-serif text-ink">A Bit About Me</h2>
-				
-				<div class="flex flex-col gap-6 font-sans leading-relaxed text-ink text-lg max-w-xl">
-					<p>
-						I'm a high school senior based in the Bay Area, CA. As of now I spend most of my time <span class="">researching BCIs</span>, working on KiCad schematics (currently participating in <a href="https://stasis.hackclub.com/" class="squiggly-underline text-ink hover:text-slate transition-colors">Hack Club's Stasis</a> event!), and over-engineering everything I own when I should be doing homework. Any space where tech can be used for good, I'm there.
-					</p>
-					<p>
-						My work is often inspired by <span class="">impressionist art</span> and the tactile nature of analog objects. I believe in creating things that are <span class="">fun</span> and stretching my imagination. I hope to bring this philosophy to <span class="">UCSD</span> as a CS major this fall.
-					</p>
-					<p>
-						When I'm not at my desk, you'll find me out for a run, taking photos with my digicam, or playing tabla to unwind.
-					</p>
-				</div>
+				<InteractiveAboutText client:visible />
 			</div>
 
 			<div class="w-full aspect-square lg:sticky lg:top-32 flex items-center justify-center rounded-2xl">
@@ -34,4 +25,6 @@ import DraggableCrate from "../components/DraggableCrate.jsx";
 
 		</div>
 	</section>
+
+	<SelectedWorks client:visible />
 </Layout>
