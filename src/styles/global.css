@@ -48,8 +48,8 @@ body {
 	opacity: 0.5;
 }
 
-.squiggly-underline:hover::after {
+/* .squiggly-underline:hover::after {
 	opacity: 0.8;
 	transition: opacity 0.3s ease;
-}
+} */
 }

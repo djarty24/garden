@@ -65,7 +65,6 @@ export default function Hero() {
 		opacity: 1,
 	};
 
-	// Intercept clicks on the About icon to smoothly scroll if we're already here
 	const handleAboutClick = (e) => {
 		e.preventDefault();
 		const aboutSection = document.getElementById('about');
@@ -75,7 +74,7 @@ export default function Hero() {
 	};
 
 	return (
-		<div className="w-full grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-16 lg:gap-24 items-center max-w-[90rem] mx-auto">
+		<div className="w-full grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-16 lg:gap-24 items-center max-w-360 mx-auto">
 			<nav className="flex flex-col gap-8 items-center lg:items-end w-full">
 				<motion.a 
 					href="/#about" 
@@ -201,7 +200,7 @@ export default function Hero() {
 								transition={{ duration: 0.4 }}
 								className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2"
 							>
-								<div className={`text-slate/60 transition-all duration-300 origin-center ${isSpinning ? '-rotate-[85deg] scale-[0.85] opacity-80' : 'group-hover:scale-110 group-hover:-rotate-12 opacity-100'}`}>
+								<div className={`text-slate/60 transition-all duration-300 origin-center ${isSpinning ? 'rotate-[-85deg] scale-[0.85] opacity-80' : 'group-hover:scale-110 group-hover:-rotate-12 opacity-100'}`}>
 									<svg width="40" height="24" viewBox="0 0 40 24" fill="none">
 										<path d="M5 8 C 15 20, 25 0, 35 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" fill="transparent"/>
 										<path d="M28 12 L35 12 L32 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="transparent"/>

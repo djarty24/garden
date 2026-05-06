@@ -45,6 +45,10 @@ This is an hour by hour log of everything I worked on and when each feature was 
     * Added fun polaroid image hover effect for hero text
     * Drafted introduction for about me section
     * Removed the about me page and redirected all of the links to about me section of homepage
+8. Created a RecordCrate component for the about section
+    * Finalized description for left side column
+    * Created a swipe through crate for users to explore my favorite records!
+    * Added hyper links to descriptions and the same hover effect as hero section
 
 ---
 <div align="center">
