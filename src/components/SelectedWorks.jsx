@@ -1,113 +1,150 @@
 import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 
-const LockedProject = ({ work, index }) => {
+/**
+ * Creates a fade-only segment with HARD gaps before/after
+ */
+function createSegment(progress, start, length) {
+	const fadeInEnd = start + length * 0.3;
+	const visibleEnd = start + length * 0.7;
+	const fadeOutEnd = start + length;
+
+	const opacityRaw = useTransform(
+		progress,
+		[start, fadeInEnd, visibleEnd, fadeOutEnd],
+		[0, 1, 1, 0]
+	);
+
+	const opacity = useSpring(opacityRaw, {
+		stiffness: 90,
+		damping: 22
+	});
+
+	const pointerEvents = useTransform(
+		progress,
+		v => (v >= start && v <= fadeOutEnd ? "auto" : "none")
+	);
+
+	return { opacity, pointerEvents };
+}
+
+export default function SelectedWorks() {
 	const containerRef = useRef(null);
-	const isEven = index % 2 === 0;
 
 	const { scrollYProgress } = useScroll({
 		target: containerRef,
 		offset: ["start start", "end end"]
 	});
 
-	const imageOpacity = useTransform(scrollYProgress, [0, 0.1], [0.3, 1]);
-	const titleOpacity = useTransform(scrollYProgress, [0.1, 0.3], [0, 1]);
-	const stackOpacity = useTransform(scrollYProgress, [0.2, 0.4], [0, 1]);
-	const descOpacity = useTransform(scrollYProgress, [0.3, 0.6], [0, 1]);
-	const linkOpacity = useTransform(scrollYProgress, [0.5, 0.8], [0, 1]);
+	/**
+	 * TIMELINE DESIGN
+	 *
+	 * 0 → 0.18   = intro (ONLY "Selected Works")
+	 *
+	 * Then:
+	 * project → GAP → project → GAP → project
+	 */
 
-	const textY = useTransform(scrollYProgress, [0.1, 0.6], [40, 0]);
+	const intro = 0.18;
+
+	const segment = 0.16; // how long a project lives
+	const gap = 0.10;     // EMPTY space between projects
+
+	const p1Start = intro;
+	const p2Start = p1Start + segment + gap;
+	const p3Start = p2Start + segment + gap;
+
+	const p1 = createSegment(scrollYProgress, p1Start, segment);
+	const p2 = createSegment(scrollYProgress, p2Start, segment);
+	const p3 = createSegment(scrollYProgress, p3Start, segment);
 
 	return (
-		<div ref={containerRef} className="h-[200vh] w-full relative">
-			<div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden pt-24 pb-12">
-				<div className={`w-full max-w-7xl mx-auto flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-12 lg:gap-24 px-8`}>
-					
-					<motion.div style={{ opacity: imageOpacity }} className="w-full lg:w-1/2">
-						<div className="relative p-4 md:p-6 bg-[#E8DCC4] shadow-[0_20px_50px_rgba(0,0,0,0.2)] border-8 md:border-12 border-[#C5A059] outline outline-[#8B7344] outline-offset-[-12px] md:outline-offset-[-16px]">
-							<div className="absolute inset-0 border border-[#A6894D] pointer-events-none z-10"></div>
-							<div className="aspect-4/3 bg-ink/10 overflow-hidden relative group">
-								<img 
-									src={work.image} 
-									alt={work.title} 
-									className="w-full h-full object-cover"
-								/>
-								<div className="absolute inset-0 shadow-[inset_0_0_80px_rgba(0,0,0,0.15)] pointer-events-none"></div>
+		<section id="work" ref={containerRef} className="bg-canvas relative h-[800vh]">
+
+			<div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
+
+				<div className="absolute top-24 w-full z-50 pointer-events-none text-center">
+					<h2 className="text-2xl md:text-3xl font-serif text-ink">
+						Selected Works
+					</h2>
+				</div>
+
+				<div className="relative w-full max-w-6xl mx-auto px-8 h-[70vh] mt-16 md:mt-20">
+
+					<motion.div style={p1} className="absolute top-1/2 -translate-y-1/2 left-0 w-full flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
+						<div className="w-full lg:w-1/2 flex justify-center">
+							<a href="https://pocketpix.vercel.app/" target="_blank" className="w-full max-w-lg aspect-4/3 relative">
+								<img src="/work/pocketpix.png" alt="PocketPix" className="w-full h-full object-contain" />
+							</a>
+						</div>
+						<div className="w-full lg:w-1/2 flex flex-col gap-6 text-left">
+							<h3 className="text-4xl md:text-5xl font-serif text-ink italic">PocketPix</h3>
+							<div className="flex flex-wrap gap-3">
+								{["React", "TypeScript", "Vite"].map(tech => (
+									<span key={tech} className="text-[11px] uppercase tracking-widest border border-slate/30 px-4 py-1.5 rounded-full text-slate font-sans">
+										{tech}
+									</span>
+								))}
 							</div>
+							<p className="font-sans text-slate leading-relaxed text-lg max-w-lg mt-2 mb-2">
+								A nostalgic nod to early digital cameras. PocketPix turns your browser into a classic 2000s Sony Cyber-shot digital camera. You can cycle through different Y2K filters, snap photos, and save them to your gallery.
+							</p>
+							<a href="/work/pocketpix" className="squiggly-underline w-fit inline-flex items-center gap-4 text-md font-serif italic text-ink hover:text-slate transition-colors">
+								Read More
+							</a>
 						</div>
 					</motion.div>
 
-					<div className="w-full lg:w-1/2 flex flex-col gap-6 text-left relative z-10">
-						<motion.h3 style={{ opacity: titleOpacity, y: textY }} className="text-5xl md:text-6xl font-serif text-ink italic">
-							{work.title}
-						</motion.h3>
-
-						<motion.div style={{ opacity: stackOpacity, y: textY }} className="flex flex-wrap gap-3">
-							{work.stack.map(tech => (
-								<span key={tech} className="text-[11px] uppercase tracking-widest border border-slate/30 px-4 py-1.5 rounded-full text-slate font-sans">
-									{tech}
-								</span>
-							))}
-						</motion.div>
-
-						<motion.p style={{ opacity: descOpacity, y: textY }} className="font-sans text-slate/90 leading-relaxed text-lg max-w-lg mt-4 mb-4">
-							{work.description}
-						</motion.p>
-
-						<motion.div style={{ opacity: linkOpacity, y: textY }}>
-							<a href={work.link} className="inline-flex items-center gap-4 text-sm font-serif italic text-ink hover:text-slate transition-colors group">
-								Read More
-								<svg width="24" height="1" viewBox="0 0 24 1" fill="none" className="transition-transform group-hover:translate-x-2">
-									<rect width="24" height="1" fill="currentColor"/>
-								</svg>
+					<motion.div style={p2} className="absolute top-1/2 -translate-y-1/2 left-0 w-full flex flex-col lg:flex-row-reverse items-center gap-12 lg:gap-24">
+						<div className="w-full lg:w-1/2 flex justify-center">
+							<a href="https://ditch-explorer.vercel.app/" target="_blank" className="w-full max-w-lg aspect-4/3 relative">
+								<img src="/work/ditch-explorer.png" alt="Ditch Explorer" className="w-full h-full object-contain" />
 							</a>
-						</motion.div>
-					</div>
+						</div>
+						<div className="w-full lg:w-1/2 flex flex-col gap-6 items-start">
+							<h3 className="text-4xl md:text-5xl font-serif text-ink italic">Ditch Explorer</h3>
+							<div className="flex flex-wrap gap-3 justify-start w-full">
+								{["React", "Typescript", "98.css"].map(tech => (
+									<span key={tech} className="text-[11px] uppercase tracking-widest border border-slate/30 px-4 py-1.5 rounded-full text-slate font-sans">
+										{tech}
+									</span>
+								))}
+							</div>
+							<p className="font-sans text-slate leading-relaxed text-lg max-w-lg mt-2 mb-2">
+								An interactive, Windows 98 themed game to teach users terminal commands! It follows a storyline where players need to fix a crashed computer system.
+							</p>
+							<a href="/work/ditch-explorer" className="squiggly-underline w-fit inline-flex items-center gap-4 text-md font-serif italic text-ink hover:text-slate transition-colors">
+								Read More
+							</a>
+						</div>
+					</motion.div>
+
+					<motion.div style={p3} className="absolute top-1/2 -translate-y-1/2 left-0 w-full flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
+						<div className="w-full lg:w-1/2 flex justify-center">
+							<a href="https://new-leaf-seven.vercel.app/" target="_blank" className="w-full max-w-lg aspect-4/3 relative">
+								<img src="/work/new-leaf.png" alt="New Leaf" className="w-full h-full object-contain" />
+							</a>
+						</div>
+						<div className="w-full lg:w-1/2 flex flex-col gap-6 text-left">
+							<h3 className="text-4xl md:text-5xl font-serif text-ink italic">New Leaf</h3>
+							<div className="flex flex-wrap gap-3">
+								{["React", "Firebase", "Vite"].map(tech => (
+									<span key={tech} className="text-[11px] uppercase tracking-widest border border-slate/30 px-4 py-1.5 rounded-full text-slate font-sans">
+										{tech}
+									</span>
+								))}
+							</div>
+							<p className="font-sans text-slate leading-relaxed text-lg max-w-lg mt-2 mb-2">
+								A community-focused tracker and support space for teens navigating the process of quitting tobacco usage and vaping. Originally created for my high school's TUPE committee's Take Down Tobacco Multimedia Competition as well as Hack Club's Sleepover event.
+							</p>
+							<a href="/work/new-leaf" className="squiggly-underline w-fit inline-flex items-center gap-4 text-md font-serif italic text-ink hover:text-slate transition-colors">
+								Read More
+							</a>
+						</div>
+					</motion.div>
 
 				</div>
 			</div>
-		</div>
-	);
-};
-
-export default function SelectedWorks() {
-	const projects = [
-		{
-			title: "PocketPix",
-			stack: ["React Native", "Expo", "TypeScript"],
-			description: "A nostalgic nod to early digital cameras. PocketPix brings the tactile joy and unpredictable aesthetic of 2000s digicams to your phone, complete with artificial processing delays to encourage living in the moment rather than staring at a screen.",
-			image: "/work/pocketpix.png",
-			link: "/work/pocketpix"
-		},
-		{
-			title: "Ditch Explorer",
-			stack: ["React", "Three.js", "WebGL"],
-			description: "An interactive mapping tool for urban exploration. Discovering and documenting local concrete rivers and hidden pathways, turning forgotten municipal infrastructure into a captivating digital expedition.",
-			image: "/work/ditch-explorer.png",
-			link: "/work/ditch-explorer"
-		},
-		{
-			title: "New Leaf",
-			stack: ["React", "Firebase", "Vite"],
-			description: "A digital sanctuary for personal growth. New Leaf combines an anonymous community forum with private journaling and habit tracking, designed to foster mental well-being in a cozy, non-judgmental environment.",
-			image: "/work/new-leaf.png",
-			link: "/work/new-leaf"
-		}
-	];
-
-	return (
-		<section id="work" className="bg-canvas relative pt-12">
-			
-			<div className="sticky top-12 md:top-16 w-full z-50 pointer-events-none text-center">
-				<h1 className="text-3xl md:text-4xl font-serif text-ink italic">Selected Works</h1>
-			</div>
-
-			<div className="relative z-10">
-				{projects.map((work, i) => (
-					<LockedProject key={work.title} work={work} index={i} />
-				))}
-			</div>
-
 		</section>
 	);
 }

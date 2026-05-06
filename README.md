@@ -52,7 +52,11 @@ This is an hour by hour log of everything I worked on and when each feature was 
 9. Finished about me section, started selected works section of home page
     * Added the hyper link effect for about me
     * Created SelectedWorks.jsx to show the museum gallery style works
-10. 
+10. Working on museum project gallery
+    * Added locking scroll effect using timelines and Matter
+    * Designed picture frames for each of my selected works
+    * Added project descriptions
+    * Created fade in & out animations controlled by mouse scroll
 
 ---
 <div align="center">
