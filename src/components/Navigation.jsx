@@ -24,6 +24,8 @@ export default function Navigation() {
 	};
 
 	const handleLinkClick = (e, path) => {
+		if (isExternal) return;
+
 		if (path === '/#about' && window.location.pathname === '/') {
 			e.preventDefault();
 			setIsOpen(false);
@@ -49,7 +51,7 @@ export default function Navigation() {
 		{ name: 'Work', path: '/work' },
 		{ name: 'Garden', path: '/garden' },
 		{ name: 'Guest Book', path: '/guestbook' },
-		{ name: 'Download CV', path: '/cv' },
+		{ name: 'Download CV', path: '/cv.pdf', isExternal: true },
 		{ name: 'Contact', path: '/#contact' }
 	];
 
@@ -58,7 +60,8 @@ export default function Navigation() {
 
 	return (
 		<>
-			<header className={`fixed top-0 left-0 right-0 w-full flex justify-between items-center p-8 z-50 pointer-events-none transition-colors duration-1000 ease-in-out`}>
+			{/* Added z-[110] here so the header is always on top of the menu overlay */}
+			<header className={`fixed top-0 left-0 right-0 w-full flex justify-between items-center p-8 pointer-events-none transition-colors duration-1000 ease-in-out z-[110]`}>
 
 				<a 
 					href="/" 
@@ -115,7 +118,8 @@ export default function Navigation() {
 						animate={{ opacity: 1, backdropFilter: "blur(8px)" }}
 						exit={{ opacity: 0, backdropFilter: "blur(0px)" }}
 						transition={{ duration: 0.4 }}
-						className="fixed inset-0 bg-canvas/95 z-40 flex items-center justify-center"
+						/* Changed z-40 to z-[100] here to cover the footer */
+						className="fixed inset-0 bg-canvas/95 z-[100] flex items-center justify-center"
 					>
 						<nav className="flex flex-col gap-4 items-start">
 							{links.map((link, i) => (

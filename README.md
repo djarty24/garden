@@ -74,7 +74,12 @@ This is an hour by hour log of everything I worked on and when each feature was 
     * Relinked the hero navigation section and navbar to contact section
     * Added get in touch message + other social icons
     * Added a simple footer at the bottom of every page
-15. 
+15. Wrapping up home page design
+    * Fixed bug where the footer was overlapping with the navigation bar when it was open
+    * Changed the design of the selected project frames so that it looks more cohesive with my website
+    * Added more items to my desk top section
+    * Brainstormed ideas for the guestbook! (the most exciting feature imo)
+    * Realized the dummy CV failed to upload from before so I readded it in
 
 
 ---
