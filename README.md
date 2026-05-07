@@ -61,7 +61,10 @@ This is an hour by hour log of everything I worked on and when each feature was 
     * Added tilt animation to picture frames
     * Added "explore the rest of my projects" button
     * Started designing project footer/contact element
-12. 
+12. Still working on the tinkering projects section (sorry this is taking a long time!)
+    * Figured out how to get elements to fly off screen and look scattered
+    * Created a desk layout with a cutting mat
+    * [WIP] manually setting the position of each element is taking forever and will probably continue into the next hour
 
 ---
 <div align="center">
