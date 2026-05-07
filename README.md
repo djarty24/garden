@@ -69,6 +69,12 @@ This is an hour by hour log of everything I worked on and when each feature was 
     * Finished manually positioning desktop items (i might add more later)
     * Made elements draggable and more interactive
     * Began coding the footer/contact section
+14. Finished contact section
+    * Created `Contact.jsx` component
+    * Relinked the hero navigation section and navbar to contact section
+    * Added get in touch message + other social icons
+    * Added a simple footer at the bottom of every page
+15. 
 
 
 ---

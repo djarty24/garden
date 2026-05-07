@@ -2,6 +2,7 @@
 import { ClientRouter } from "astro:transitions";
 import "../styles/global.css";
 import Navigation from "../components/Navigation.jsx";
+import Footer from "../components/Footer";
 
 const { bgClass = "bg-canvas text-ink" } = Astro.props;
 ---
@@ -33,5 +34,8 @@ const { bgClass = "bg-canvas text-ink" } = Astro.props;
 		<main class="relative z-10">
 			<slot />
 		</main>
+		<div>
+			<Footer />
+		</div>
 	</body>
 </html>

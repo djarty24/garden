@@ -2,8 +2,9 @@
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.jsx";
 import DraggableCrate from "../components/DraggableCrate.jsx";
-import InteractiveAboutText from "../components/InteractiveAboutText.jsx";
+import About from "../components/About.jsx";
 import SelectedWorks from "../components/SelectedWorks.jsx";
+import Contact from "../components/Contact";
 ---
 
 <Layout bgClass="bg-canvas text-ink">
@@ -16,7 +17,7 @@ import SelectedWorks from "../components/SelectedWorks.jsx";
 			
 			<div class="flex flex-col gap-10">
 				<h2 class="text-3xl md:text-4xl font-serif text-ink">A Bit About Me</h2>
-				<InteractiveAboutText client:visible />
+				<About client:visible />
 			</div>
 
 			<div class="w-full aspect-square lg:sticky lg:top-32 flex items-center justify-center rounded-2xl">
@@ -27,4 +28,9 @@ import SelectedWorks from "../components/SelectedWorks.jsx";
 	</section>
 
 	<SelectedWorks client:visible />
+	
+	<section id="contact">
+		<Contact />
+	</section>
+	
 </Layout>

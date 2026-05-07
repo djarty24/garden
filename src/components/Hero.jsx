@@ -267,7 +267,7 @@ export default function Hero() {
 				</motion.a>
 
 				<motion.a 
-					href="/contact" 
+					href="/#contact"
 					initial={{ opacity: 0, x: -150, y: -100 }}
 					animate={{ opacity: 1, x: -48, y: 0 }}
 					transition={{ duration: 1, delay: stage3Delay + 0.2, type: "spring", bounce: 0.3 }}

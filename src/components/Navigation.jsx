@@ -23,14 +23,20 @@ export default function Navigation() {
 		setWordIndex((prev) => (prev + 1) % actionWords.length);
 	};
 
-	// Smart link handler for the About section
 	const handleLinkClick = (e, path) => {
-		if (path === '/#about' && (window.location.pathname === '/' || window.location.pathname === '')) {
+		if (path === '/#about' && window.location.pathname === '/') {
 			e.preventDefault();
 			setIsOpen(false);
 			const aboutSection = document.getElementById('about');
 			if (aboutSection) {
 				aboutSection.scrollIntoView({ behavior: 'smooth' });
+			}
+		} else if (path === '/#contact' && window.location.pathname === '/') {
+			e.preventDefault();
+			setIsOpen(false);
+			const contactSection = document.getElementById('contact');
+			if (contactSection) {
+				contactSection.scrollIntoView({ behavior: 'smooth' });
 			}
 		} else {
 			setIsOpen(false);
@@ -44,7 +50,7 @@ export default function Navigation() {
 		{ name: 'Garden', path: '/garden' },
 		{ name: 'Guest Book', path: '/guestbook' },
 		{ name: 'Download CV', path: '/cv' },
-		{ name: 'Contact', path: '/contact' }
+		{ name: 'Contact', path: '/#contact' }
 	];
 
 	const headerTextColor = (isWorkPage && !isOpen) ? 'text-canvas' : 'text-ink';

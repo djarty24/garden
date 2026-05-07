@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 
-export default function InteractiveAboutText() {
+export default function About() {
 	const [showBCIPhoto, setShowBCIPhoto] = useState(false);
 	const [showArtPhoto, setShowArtPhoto] = useState(false);
 	const [showFunPhoto, setShowFunPhoto] = useState(false);
