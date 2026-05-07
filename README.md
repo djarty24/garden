@@ -65,6 +65,11 @@ This is an hour by hour log of everything I worked on and when each feature was 
     * Figured out how to get elements to fly off screen and look scattered
     * Created a desk layout with a cutting mat
     * [WIP] manually setting the position of each element is taking forever and will probably continue into the next hour
+13. Finally finished selected works section!
+    * Finished manually positioning desktop items (i might add more later)
+    * Made elements draggable and more interactive
+    * Began coding the footer/contact section
+
 
 ---
 <div align="center">
