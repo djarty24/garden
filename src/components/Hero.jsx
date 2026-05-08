@@ -84,8 +84,7 @@ export default function Hero() {
 					transition={{ duration: 1, delay: stage3Delay, type: "spring", bounce: 0.3 }}
 					className="flex flex-col items-center gap-5 group"
 				>
-					{/* Added shrink-0 to prevent huge scaling during transitions */}
-					<div className="w-20 h-24 shrink-0 flex items-center justify-center">
+					<div className="w-24 h-24 shrink-0 flex items-center justify-center">
 						<img src="/hero/about-icon.png" alt="About" className="w-full h-full object-contain drop-shadow-sm transition-all duration-300 ease-out group-hover:scale-[1.35] group-hover:-rotate-12 group-hover:drop-shadow-md"/>
 					</div>
 					<span className="text-base text-ink font-serif italic">About</span>
@@ -98,20 +97,21 @@ export default function Hero() {
 					transition={{ duration: 1, delay: stage3Delay + 0.1, type: "spring", bounce: 0.3 }}
 					className="flex flex-col items-center gap-5 group"
 				>
-					<div className="w-20 h-24 shrink-0 flex items-center justify-center">
+					<div className="w-24 h-24 shrink-0 flex items-center justify-center">
 						<img src="/hero/work-icon.png" alt="Work" className="w-full h-full object-contain drop-shadow-sm transition-all duration-300 ease-out group-hover:scale-[1.35] group-hover:-rotate-12 group-hover:drop-shadow-md"/>
 					</div>
 					<span className="text-base text-ink font-serif italic">Work</span>
 				</motion.a>
 
-				<motion.a 
+				<motion.a
 					href="/cv.pdf" 
+					target='_blank'
 					initial={{ opacity: 0, x: 150, y: -100 }}
 					animate={{ opacity: 1, x: 48, y: 0 }}
 					transition={{ duration: 1, delay: stage3Delay + 0.2, type: "spring", bounce: 0.3 }}
 					className="flex flex-col items-center gap-5 group"
 				>
-					<div className="w-20 h-24 shrink-0 flex items-center justify-center">
+					<div className="w-24 h-24 shrink-0 flex items-center justify-center">
 						<img src="/hero/cv-icon.png" alt="Download CV" className="w-full h-full object-contain drop-shadow-sm transition-all duration-300 ease-out group-hover:scale-[1.35] group-hover:-rotate-12 group-hover:drop-shadow-md"/>
 					</div>
 					<span className="text-base text-ink font-serif italic">Download CV</span>
@@ -247,7 +247,7 @@ export default function Hero() {
 					transition={{ duration: 1, delay: stage3Delay, type: "spring", bounce: 0.3 }}
 					className="flex flex-col items-center gap-5 group"
 				>
-					<div className="w-20 h-24 shrink-0 flex items-center justify-center">
+					<div className="w-24 h-24 shrink-0 flex items-center justify-center">
 						<img src="/hero/garden-icon.png" alt="Garden" className="w-full h-full object-contain drop-shadow-sm transition-all duration-300 ease-out group-hover:scale-[1.35] group-hover:rotate-12 group-hover:drop-shadow-md"/>
 					</div>
 					<span className="text-base text-ink font-serif italic">Garden</span>
@@ -260,7 +260,7 @@ export default function Hero() {
 					transition={{ duration: 1, delay: stage3Delay + 0.1, type: "spring", bounce: 0.3 }}
 					className="flex flex-col items-center gap-5 group"
 				>
-					<div className="w-20 h-24 shrink-0 flex items-center justify-center">
+					<div className="w-24 h-24 shrink-0 flex items-center justify-center">
 						<img src="/hero/guestbook-icon.png" alt="Guest Book" className="w-full h-full object-contain drop-shadow-sm transition-all duration-300 ease-out group-hover:scale-[1.35] group-hover:rotate-12 group-hover:drop-shadow-md"/>
 					</div>
 					<span className="text-base text-ink font-serif italic">Guest Book</span>
@@ -273,7 +273,7 @@ export default function Hero() {
 					transition={{ duration: 1, delay: stage3Delay + 0.2, type: "spring", bounce: 0.3 }}
 					className="flex flex-col items-center gap-5 group"
 				>
-					<div className="w-20 h-24 shrink-0 flex items-center justify-center">
+					<div className="w-24 h-24 shrink-0 flex items-center justify-center">
 						<img src="/hero/contact-icon.png" alt="Contact" className="w-full h-full object-contain drop-shadow-sm transition-all duration-300 ease-out group-hover:scale-[1.35] group-hover:rotate-12 group-hover:drop-shadow-md"/>
 					</div>
 					<span className="text-base text-ink font-serif italic">Contact</span>

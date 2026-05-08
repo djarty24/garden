@@ -80,6 +80,13 @@ This is an hour by hour log of everything I worked on and when each feature was 
     * Added more items to my desk top section
     * Brainstormed ideas for the guestbook! (the most exciting feature imo)
     * Realized the dummy CV failed to upload from before so I readded it in
+16. Started working on guestbook feature
+    * Made the navbar automatically close after clicking a link
+    * Decided on a garden where users can send me a meessage!
+    * Created the new page & title
+    * Created hover effect on flowers to view who planted them
+    * [WIP] Finding flower images to upload
+    * [WIP] Setting up message upload system
 
 
 ---

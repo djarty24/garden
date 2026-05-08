@@ -35,8 +35,7 @@ function ScatterItem({ scrollYProgress, scatterProgress, children, xVals, yVals,
 	return (
 		<motion.div 
 			style={{ x, y, rotate, opacity, pointerEvents }} 
-			className={`absolute top-0 left-0 z-20 ${size} will-change-transform`}
-		>
+			className={`absolute top-0 left-0 z-20 ${size} will-change-transform`}>
 			<motion.div
 				drag
 				whileDrag={{ scale: 1.1, zIndex: 50 }}

@@ -3,7 +3,7 @@ export default function Footer() {
 		<footer className="relative w-full pt-8 pb-12 bg-[#FDF1F3] flex flex-col items-center justify-center z-50">
 			
 			<svg 
-				className="w-full h-12 md:h-16 absolute top-0 left-0 -translate-y-[99%] z-50 pointer-events-none" 
+				className="w-full h-12 md:h-16 absolute top-0 left-0 translate-y-[-99%] z-50 pointer-events-none" 
 				preserveAspectRatio="none" 
 				viewBox="0 0 1200 100"
 			>
