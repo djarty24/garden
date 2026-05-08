@@ -33,8 +33,8 @@ function ScatterItem({ scrollYProgress, scatterProgress, children, xVals, yVals,
 	const pointerEvents = useTransform(scrollYProgress, v => (v > 0.80 && v < 0.98) ? "auto" : "none");
 
 	return (
-		<motion.div 
-			style={{ x, y, rotate, opacity, pointerEvents }} 
+		<motion.div
+			style={{ x, y, rotate, opacity, pointerEvents }}
 			className={`absolute top-0 left-0 z-20 ${size} will-change-transform`}>
 			<motion.div
 				drag
@@ -58,9 +58,8 @@ const CoffeeMug = () => (
 
 function ExploreTinkering({ scrollYProgress }) {
 	const deskOpacity = useTransform(scrollYProgress, [0.76, 0.78, 0.98, 1], [0, 1, 1, 0]);
-	// THIS IS THE FIX: Keep the desk invisible to the mouse until it fades in
 	const deskPointerEvents = useTransform(scrollYProgress, v => (v > 0.76 && v < 1) ? "auto" : "none");
-	
+
 	const matOpacity = useTransform(scrollYProgress, [0.78, 0.80, 0.98, 1], [0, 1, 1, 0]);
 
 	const scatterProgressRaw = useTransform(scrollYProgress, [0.80, 0.86, 0.94, 0.99], [0, 1, 1, 2]);

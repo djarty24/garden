@@ -87,6 +87,11 @@ This is an hour by hour log of everything I worked on and when each feature was 
     * Created hover effect on flowers to view who planted them
     * [WIP] Finding flower images to upload
     * [WIP] Setting up message upload system
+17. Working on `Guestbook.tsx`
+    * Selected flower images for my digital garden
+    * Created send a message feature and side panel box
+    * [WIP] Linking my Spotify so people can recommend songs
+18. 
 
 
 ---
