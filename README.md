@@ -91,7 +91,12 @@ This is an hour by hour log of everything I worked on and when each feature was 
     * Selected flower images for my digital garden
     * Created send a message feature and side panel box
     * [WIP] Linking my Spotify so people can recommend songs
-18. 
+18. Continued working on the guestbook
+    * Added sorting algorithm that creates new pages if too many messages are sent
+    * Tested sorting algorithm with dummy message entries
+    * Added option for users to submit their websites as well
+    * Set up Firebase for storing the actual messages
+19. 
 
 
 ---
