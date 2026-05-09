@@ -96,8 +96,14 @@ This is an hour by hour log of everything I worked on and when each feature was 
     * Tested sorting algorithm with dummy message entries
     * Added option for users to submit their websites as well
     * Set up Firebase for storing the actual messages
-19. 
-
+19. Wrapped up Guestbook features!
+    * Added Spotify dropdown feature
+        * Registered on the Spotify Developer Dashboard to get my client ID and API tokens
+        * Linked my Spotify account via Spotify API to add guestbook recs to a playlist
+        * Learned how to set up ngrok to test locally
+        * Realized I can't use the Spotify API because I don't have premium
+            - This led me to scrap this feature but I spent pretty much all of this hour trying to figure it out implement it
+    * Fixed up some Firebase issues, guestbook is ready!
 
 ---
 <div align="center">

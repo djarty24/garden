@@ -21,18 +21,18 @@ export default function Contact() {
                         24revati@gmail.com
                     </a>
                     
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="absolute -top-6 -left-8 text-[#c88d9a] opacity-0 scale-50 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 ease-out pointer-events-none -rotate-12" filter="url(#sketch-filter)">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="absolute -top-2 -left-8 text-[#c88d9a] opacity-0 scale-50 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 ease-out pointer-events-none -rotate-12" filter="url(#sketch-filter)">
                         <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
                     </svg>
 
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="absolute -top-8 -right-6 text-[#6b92b6] opacity-0 scale-50 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300 delay-75 ease-out pointer-events-none rotate-12" filter="url(#sketch-filter)">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="absolute -top-4 -right-6 text-[#6b92b6] opacity-0 scale-50 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300 delay-75 ease-out pointer-events-none rotate-12" filter="url(#sketch-filter)">
                         <circle cx="12" cy="12" r="10" />
                         <path d="M8 14s1.5 2 4 2 4-2 4-2" />
                         <line x1="9" y1="9" x2="9.01" y2="9" />
                         <line x1="15" y1="9" x2="15.01" y2="9" />
                     </svg>
 
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="absolute -bottom-4 -right-10 text-[#88ad82] opacity-0 scale-50 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 delay-150 ease-out pointer-events-none rotate-45" filter="url(#sketch-filter)">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="absolute -bottom-8 right-16 text-[#88ad82] opacity-0 scale-50 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 delay-150 ease-out pointer-events-none rotate-45" filter="url(#sketch-filter)">
                         <path d="M12 2v20M17 7l-10 10M22 12H2M20 12v0M17 17L7 7" />
                     </svg>
                 </span>
