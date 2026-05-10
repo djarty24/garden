@@ -50,7 +50,7 @@ export default function Navigation() {
 		{ name: 'Home', path: '/' },
 		{ name: 'About', path: '/#about' },
 		{ name: 'Work', path: '/work' },
-		{ name: 'Musings', path: '/musings' },
+		{ name: 'Field Notes', path: '/fieldnotes' },
 		{ name: 'Guest Book', path: '/guestbook' },
 		{ name: 'Download CV', path: '/cv.pdf', isExternal: true },
 		{ name: 'Contact', path: '/#contact' }

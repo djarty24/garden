@@ -1,0 +1,46 @@
+---
+import Layout from "./Layout.astro";
+const { frontmatter } = Astro.props;
+---
+
+<Layout title={frontmatter.title}>
+	<main class="w-full min-h-screen bg-canvas pt-32 pb-40 px-4 md:px-8">
+		<article class="max-w-2xl mx-auto">
+			
+			<header class="mb-12">
+				<p class="text-xs font-mono text-slate mb-3 uppercase tracking-widest">
+					{frontmatter.date} • <span class="text-[#c88d9a]">{frontmatter.tag}</span>
+				</p>
+				<h1 class="text-3xl md:text-5xl font-serif text-ink italic mb-6">
+					{frontmatter.title}
+				</h1>
+				<hr class="border-slate/10" />
+			</header>
+			
+			<div class="markdown-content font-sans text-ink leading-loose text-sm md:text-base">
+				<slot />
+			</div>
+
+		</article>
+	</main>
+</Layout>
+
+<style is:global>
+	@reference "../styles/global.css"; 
+	
+	.markdown-content h2 {
+		@apply text-2xl font-serif italic text-ink mt-12 mb-4;
+	}
+	.markdown-content p {
+		@apply mb-6;
+	}
+	.markdown-content a {
+		@apply text-[#c88d9a] underline underline-offset-4 decoration-slate/30 hover:decoration-[#c88d9a] transition-colors;
+	}
+	.markdown-content ul {
+		@apply list-disc list-inside mb-6 space-y-2;
+	}
+	.markdown-content pre {
+		@apply bg-slate/10 p-4 rounded-xl mb-6 overflow-x-auto text-xs font-mono;
+	}
+</style>

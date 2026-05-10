@@ -225,7 +225,7 @@ export default function SelectedWorks() {
 
 					<motion.div style={p1} className="absolute top-1/2 -translate-y-1/2 left-0 w-full flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
 						<div className="w-full lg:w-1/2 flex justify-center z-10">
-							<a href="https://pocketpix.vercel.app/" target="_blank" className="w-full max-w-lg aspect-[4/3] relative group block mt-12 mx-auto">
+							<a href="https://pocketpix.vercel.app/" target="_blank" className="w-full max-w-lg aspect-4/3 relative group block mt-12 mx-auto">
 								<div className="absolute bottom-full left-0 w-full h-20 md:h-28 pointer-events-none -mb-0.5 z-0">
 									<svg className="w-full h-full overflow-visible">
 										<line x1="50%" y1="12" x2="15%" y2="100%" stroke="currentColor" strokeWidth="1.5" className="text-slate/30" />
@@ -233,7 +233,7 @@ export default function SelectedWorks() {
 										<circle cx="50%" cy="12" r="4" fill="currentColor" className="text-slate/40 drop-shadow-sm" />
 									</svg>
 								</div>
-								<div className="relative w-full h-full z-20 transition-transform duration-500 ease-out origin-top group-hover:-rotate-2 border-[12px] md:border-[20px] border-white bg-white shadow-2xl">
+								<div className="relative w-full h-full z-20 transition-transform duration-500 ease-out origin-top group-hover:-rotate-2 border-12 md:border-20 border-white bg-white shadow-2xl">
 									<img src="/work/pocketpix.png" alt="PocketPix" className="w-full h-full object-cover" />
 								</div>
 							</a>
@@ -261,7 +261,7 @@ export default function SelectedWorks() {
 
 					<motion.div style={p2} className="absolute top-1/2 -translate-y-1/2 left-0 w-full flex flex-col lg:flex-row-reverse items-center gap-12 lg:gap-24">
 						<div className="w-full lg:w-1/2 flex justify-center z-10">
-							<a href="https://ditch-explorer.vercel.app/" target="_blank" className="w-full max-w-lg aspect-[4/3] relative group block mt-12 mx-auto">
+							<a href="https://ditch-explorer.vercel.app/" target="_blank" className="w-full max-w-lg aspect-4/3 relative group block mt-12 mx-auto">
 								<div className="absolute bottom-full left-0 w-full h-20 md:h-28 pointer-events-none -mb-0.5 z-0">
 									<svg className="w-full h-full overflow-visible">
 										<line x1="50%" y1="12" x2="15%" y2="100%" stroke="currentColor" strokeWidth="1.5" className="text-slate/30" />
@@ -269,7 +269,7 @@ export default function SelectedWorks() {
 										<circle cx="50%" cy="12" r="4" fill="currentColor" className="text-slate/40 drop-shadow-sm" />
 									</svg>
 								</div>
-								<div className="relative w-full h-full z-20 transition-transform duration-500 ease-out origin-top group-hover:rotate-2 border-[12px] md:border-[20px] border-white bg-white shadow-2xl">
+								<div className="relative w-full h-full z-20 transition-transform duration-500 ease-out origin-top group-hover:rotate-2 border-12 md:border-20 border-white bg-white shadow-2xl">
 									<img src="/work/ditch-explorer.png" alt="Ditch Explorer" className="w-full h-full object-cover" />
 								</div>
 							</a>
@@ -297,7 +297,7 @@ export default function SelectedWorks() {
 
 					<motion.div style={p3} className="absolute top-1/2 -translate-y-1/2 left-0 w-full flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
 						<div className="w-full lg:w-1/2 flex justify-center z-10">
-							<a href="https://new-leaf-seven.vercel.app/" target="_blank" className="w-full max-w-lg aspect-[4/3] relative group block mt-12 mx-auto">
+							<a href="https://new-leaf-seven.vercel.app/" target="_blank" className="w-full max-w-lg aspect-4/3 relative group block mt-12 mx-auto">
 								<div className="absolute bottom-full left-0 w-full h-20 md:h-28 pointer-events-none -mb-0.5 z-0">
 									<svg className="w-full h-full overflow-visible">
 										<line x1="50%" y1="12" x2="15%" y2="100%" stroke="currentColor" strokeWidth="1.5" className="text-slate/30" />
@@ -305,7 +305,7 @@ export default function SelectedWorks() {
 										<circle cx="50%" cy="12" r="4" fill="currentColor" className="text-slate/40 drop-shadow-sm" />
 									</svg>
 								</div>
-								<div className="relative w-full h-full z-20 transition-transform duration-500 ease-out origin-top group-hover:-rotate-2 border-[12px] md:border-[20px] border-white bg-white shadow-2xl">
+								<div className="relative w-full h-full z-20 transition-transform duration-500 ease-out origin-top group-hover:-rotate-2 border-12 md:border-20 border-white bg-white shadow-2xl">
 									<img src="/work/new-leaf.png" alt="New Leaf" className="w-full h-full object-cover" />
 								</div>
 							</a>

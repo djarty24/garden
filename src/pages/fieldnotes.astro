@@ -1,0 +1,33 @@
+---
+import Layout from "../layouts/Layout.astro";
+import FieldNotes from "../components/FieldNotes.tsx";
+
+interface Frontmatter {
+	title: string;
+	date: string;
+	tag: string;
+}
+
+interface MarkdownPost {
+	frontmatter: Frontmatter;
+	url: string;
+}
+
+const postsData = import.meta.glob<MarkdownPost>("./posts/*.md", {
+	eager: true,
+});
+const allPosts = Object.values(postsData);
+
+const formattedPosts = allPosts
+	.map((post) => ({
+		url: post.url,
+		title: post.frontmatter.title,
+		date: post.frontmatter.date,
+		tag: post.frontmatter.tag,
+	}))
+	.sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf());
+---
+
+<Layout>
+	<FieldNotes client:load posts={formattedPosts} />
+</Layout>

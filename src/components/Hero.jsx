@@ -241,16 +241,16 @@ export default function Hero() {
 
 			<nav className="flex flex-col gap-8 items-center lg:items-start w-full">
 				<motion.a 
-					href="/musings" 
+					href="/fieldnotes" 
 					initial={{ opacity: 0, x: -150, y: 100 }}
 					animate={{ opacity: 1, x: -48, y: 0 }}
 					transition={{ duration: 1, delay: stage3Delay, type: "spring", bounce: 0.3 }}
 					className="flex flex-col items-center gap-5 group"
 				>
 					<div className="w-24 h-24 shrink-0 flex items-center justify-center">
-						<img src="/hero/musings-icon.png" alt="Musings" className="w-full h-full object-contain drop-shadow-sm transition-all duration-300 ease-out group-hover:scale-[1.35] group-hover:rotate-12 group-hover:drop-shadow-md"/>
+						<img src="/hero/fieldnotes-icon.png" alt="Field Notes" className="w-full h-full object-contain drop-shadow-sm transition-all duration-300 ease-out group-hover:scale-[1.35] group-hover:rotate-12 group-hover:drop-shadow-md"/>
 					</div>
-					<span className="text-base text-ink font-serif italic">Musings</span>
+					<span className="text-base text-ink font-serif italic">Field Notes</span>
 				</motion.a>
 
 				<motion.a 
