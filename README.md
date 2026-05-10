@@ -8,6 +8,7 @@ This is my personal website! I've tried to make it a cozy corner of the Internet
 ## Tech Stack
 A list of the toools used to build my website:
 1. Astro.js
+Rehype External Links
 
 ## Developer Log (for Hack Club's Sleepover event!)
 This is an hour by hour log of everything I worked on and when each feature was implemented.
@@ -90,7 +91,7 @@ This is an hour by hour log of everything I worked on and when each feature was 
 17. Working on `Guestbook.tsx`
     * Selected flower images for my digital garden
     * Created send a message feature and side panel box
-    * [WIP] Linking my Spotify so people can recommend songs
+    * ~~[WIP] Linking my Spotify so people can recommend songs~~
 18. Continued working on the guestbook
     * Added sorting algorithm that creates new pages if too many messages are sent
     * Tested sorting algorithm with dummy message entries
@@ -110,7 +111,12 @@ This is an hour by hour log of everything I worked on and when each feature was 
         * Automatically updates the index when a new file is added to the blogposts folder of this project
         * Created reusable blog post layout which renders Markdown
         * Had to change FieldNotes file to Typescript to get it to work
-21. 
+21. Finished up blog post feature
+    * Fixed the Markdown rendering for each blogpost by creating a test template
+        * Added a custom code snippet styling theme (rose-pine-dawn)
+    * Installed `rehype-external-links` to automatically open all links in a new tab
+    * Added a back button to blog posts to take you to main field notes page
+22. 
 
 ---
 <div align="center">

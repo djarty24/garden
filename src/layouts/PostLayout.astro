@@ -6,41 +6,92 @@ const { frontmatter } = Astro.props;
 <Layout title={frontmatter.title}>
 	<main class="w-full min-h-screen bg-canvas pt-32 pb-40 px-4 md:px-8">
 		<article class="max-w-2xl mx-auto">
-			
+			<a href="/fieldnotes" class="group inline-flex items-center gap-2 text-[10px] font-mono text-slate hover:text-[#c88d9a] transition-colors mb-10 uppercase tracking-widest outline-none">
+				<span class="group-hover:-translate-x-1 transition-transform duration-300 ease-out">&larr;</span>
+				Back to Field Notes
+			</a>
+
 			<header class="mb-12">
-				<p class="text-xs font-mono text-slate mb-3 uppercase tracking-widest">
-					{frontmatter.date} • <span class="text-[#c88d9a]">{frontmatter.tag}</span>
-				</p>
-				<h1 class="text-3xl md:text-5xl font-serif text-ink italic mb-6">
+				<h1 class="text-3xl md:text-5xl font-serif text-ink italic mb-4">
 					{frontmatter.title}
 				</h1>
+				<p class="text-xs font-mono text-slate mb-6 uppercase tracking-widest">
+					{frontmatter.date} • <span class="text-[#c88d9a]">{frontmatter.tag}</span>
+				</p>
 				<hr class="border-slate/10" />
 			</header>
-			
+
 			<div class="markdown-content font-sans text-ink leading-loose text-sm md:text-base">
 				<slot />
 			</div>
-
 		</article>
 	</main>
 </Layout>
 
 <style is:global>
-	@reference "../styles/global.css"; 
-	
-	.markdown-content h2 {
-		@apply text-2xl font-serif italic text-ink mt-12 mb-4;
+	@reference "../styles/global.css";
+
+	.markdown-content h1,
+	.markdown-content h2,
+	.markdown-content h3,
+	.markdown-content h4 {
+		@apply font-serif italic text-ink mt-12 mb-4;
 	}
+	.markdown-content h2 {
+		@apply text-2xl;
+	}
+	.markdown-content h3 {
+		@apply text-xl;
+	}
+	.markdown-content h4 {
+		@apply text-lg;
+	}
+
 	.markdown-content p {
 		@apply mb-6;
 	}
+
 	.markdown-content a {
 		@apply text-[#c88d9a] underline underline-offset-4 decoration-slate/30 hover:decoration-[#c88d9a] transition-colors;
 	}
+
 	.markdown-content ul {
-		@apply list-disc list-inside mb-6 space-y-2;
+		@apply list-disc list-outside ml-4 mb-6 space-y-2;
 	}
+
+	.markdown-content ol {
+		@apply list-decimal list-outside ml-4 mb-6 space-y-2;
+	}
+
+	.markdown-content blockquote {
+		@apply border-l-2 border-[#c88d9a] pl-6 my-8 italic text-slate bg-slate/5 py-4 pr-4 rounded-r-lg;
+	}
+
+	.markdown-content hr {
+		@apply border-t border-slate/10 my-12;
+	}
+
+	.markdown-content img {
+		@apply rounded-xl border border-slate/10 shadow-sm my-8 w-full object-cover;
+	}
+
+	.markdown-content code {
+		@apply bg-[#FDF1F3] text-[#c88d9a] px-1.5 py-0.5 rounded-md font-mono text-xs border border-[#c88d9a]/20 shadow-sm;
+	}
+
 	.markdown-content pre {
-		@apply bg-slate/10 p-4 rounded-xl mb-6 overflow-x-auto text-xs font-mono;
+		@apply relative border border-[#c88d9a]/30 pt-10 pb-4 px-4 rounded-xl mb-6 overflow-x-auto text-xs font-mono shadow-sm;
+	}
+
+	.markdown-content pre::before {
+		content: "";
+		@apply absolute top-3.5 left-4 w-2.5 h-2.5 rounded-full bg-[#c88d9a]/60;
+		box-shadow:
+			16px 0 0 0 rgba(200, 141, 154, 0.6),
+			32px 0 0 0 rgba(200, 141, 154, 0.6);
+	}
+
+	.markdown-content pre code {
+		@apply bg-transparent text-ink border-none px-0 py-0 shadow-none;
 	}
 </style>

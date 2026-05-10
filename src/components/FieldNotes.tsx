@@ -14,12 +14,12 @@ export default function FieldNotes({ posts }: { posts: Post[] }) {
 		<section className="w-full min-h-screen bg-canvas pt-32 pb-40 px-4 md:px-8">
 			<div className="max-w-4xl mx-auto">
 				
-				<header className="mb-16 md:mb-24 flex flex-col items-center text-center">
+				<header className="mb-16 flex flex-col items-center text-center">
 					<h1 className="text-3xl md:text-5xl font-serif text-ink italic mb-4">
 						Field Notes
 					</h1>
-					<p className="text-sm text-slate font-sans max-w-md">
-						A collection of observations, experiments, and random musings from the middle of the night :)
+					<p className="text-lg text-slate font-sans max-w-md">
+						A collection of observations, experiments, and random musings from the middle of the night :&#41;
 					</p>
 				</header>
 

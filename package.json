@@ -21,6 +21,7 @@
     "framer-motion": "^12.38.0",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
+    "rehype-external-links": "^3.0.0",
     "tailwindcss": "^4.2.4"
   }
 }
