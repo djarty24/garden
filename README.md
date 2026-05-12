@@ -8,7 +8,7 @@ This is my personal website! I've tried to make it a cozy corner of the Internet
 ## Tech Stack
 A list of the toools used to build my website:
 1. Astro.js
-Rehype External Links
+rehype-external-links
 
 ## Developer Log (for Hack Club's Sleepover event!)
 This is an hour by hour log of everything I worked on and when each feature was implemented.
@@ -18,7 +18,7 @@ This is an hour by hour log of everything I worked on and when each feature was 
     * Set up README file with the project log
     * Created the Tailwind CSS custom styling palette
     * Set up page navigation
-    * Home pag hero section [WIP]
+    * Home pag hero section [WIP] (edit: completed)
     * Mostly spend this time acclimating to the new framework as I've never used Astro before
 2. Finished page navigation
     * Added navbar fade in animation (reponsive on web and mobile)
@@ -65,7 +65,7 @@ This is an hour by hour log of everything I worked on and when each feature was 
 12. Still working on the tinkering projects section (sorry this is taking a long time!)
     * Figured out how to get elements to fly off screen and look scattered
     * Created a desk layout with a cutting mat
-    * [WIP] manually setting the position of each element is taking forever and will probably continue into the next hour
+    * [WIP] manually setting the position of each element is taking forever and will probably continue into the next hour (edit: completed)
 13. Finally finished selected works section!
     * Finished manually positioning desktop items (i might add more later)
     * Made elements draggable and more interactive
@@ -86,12 +86,12 @@ This is an hour by hour log of everything I worked on and when each feature was 
     * Decided on a garden where users can send me a meessage!
     * Created the new page & title
     * Created hover effect on flowers to view who planted them
-    * [WIP] Finding flower images to upload
-    * [WIP] Setting up message upload system
+    * [WIP] Finding flower images to upload (edit: completed)
+    * [WIP] Setting up message upload system (edit: completed)
 17. Working on `Guestbook.tsx`
     * Selected flower images for my digital garden
     * Created send a message feature and side panel box
-    * ~~[WIP] Linking my Spotify so people can recommend songs~~
+    * ~~[WIP] Linking my Spotify so people can recommend songs~~ (edit: canceled)
 18. Continued working on the guestbook
     * Added sorting algorithm that creates new pages if too many messages are sent
     * Tested sorting algorithm with dummy message entries
@@ -121,13 +121,14 @@ This is an hour by hour log of everything I worked on and when each feature was 
     * Created a tagging feature for my field notes instead and linked that in the selected works feature
     * Started selected works project writeups (for ditch explorer, new leaf, and pocketpix)
     * Fixed hero & navbar navigation to redirect to the works section instead of works page
-23. 
+23. Set up analytics with [Umami](https://umami.is/)
+    * Super simple to set up - just deployed my site on Vercel
+    * Added to Umami dashboard
+    * Error with perms for firebase once app was actually deployed, fixed those
+        * Added my env variables to my Vercel project
+    * Did some file cleanup for unnecessary files
+24. 
 
-TBD:
-    1. writeups for each selected work
-    2. google analytics/some sort of tracking metrics, update images on hover effect
-    3. finalize readme & deploy to vercel
-    4. maybe set up custom domain?
 
 ---
 <div align="center">

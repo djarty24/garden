@@ -84,13 +84,13 @@ export default function FieldNotes({ posts }: { posts: Post[] }) {
 							<motion.a 
 								href={post.url}
 								key={post.url}
-								layout 
+								layout
 								initial={{ opacity: 0, y: 10 }}
 								animate={{ opacity: 1, y: 0 }}
 								exit={{ opacity: 0, scale: 0.95 }}
 								transition={{ duration: 0.3, ease: "easeInOut" }}
 								className="group flex flex-col md:flex-row md:items-baseline py-6 border-b border-slate/10 cursor-pointer hover:bg-[#FDF1F3]/50 transition-colors px-2 md:px-4 -mx-2 md:-mx-4 rounded-lg block outline-none focus:bg-[#FDF1F3]/50"
->
+							>
 								<time className="text-xs font-mono text-slate mb-2 md:mb-0 w-32 shrink-0">
 									{post.date}
 								</time>

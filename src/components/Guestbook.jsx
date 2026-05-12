@@ -112,7 +112,7 @@ export default function GardenCanvas() {
 	};
 
 	return (
-		<section className="w-full min-h-screen bg-canvas relative flex flex-col pt-24 pb-40 px-4 md:px-8 z-10">
+		<section className="w-full min-h-screen bg-canvas relative flex flex-col pt-24 pb-40 px-4 md:px-8 z-10 my-8">
 			<svg width="0" height="0" className="absolute pointer-events-none">
 				<defs>
 					<filter id={sketchFilterId} x="-10%" y="-10%" width="120%" height="120%">
@@ -123,7 +123,7 @@ export default function GardenCanvas() {
 			</svg>
 
 			<div className="text-center z-10 mb-8 relative flex flex-col items-center">
-				<h2 className="text-3xl md:text-5xl font-serif text-ink italic mt-6 my-4">Guestbook</h2>
+				<h2 className="text-3xl md:text-5xl font-serif text-ink italic my-4">Guestbook</h2>
 				<p className="text-sm md:text-base leading-normal text-slate font-sans max-w-md mx-auto mb-5">
 					Plant a flower and leave me a message! <br/>
 					This guestbook was inspired by <a href="https://annasgarden.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline decoration-slate/30 hover:text-ink transition-colors underline-offset-2">Anna's Secret Garden</a>.
@@ -144,7 +144,7 @@ export default function GardenCanvas() {
 								<motion.div layout={false} className="relative w-full h-full flex items-center justify-center cursor-pointer" animate={{ rotate: [-2, 2, -2] }} transition={{ repeat: Infinity, duration: 4 + ((flower.createdAt || 0) % 3), ease: "easeInOut" }} onClick={() => setActiveMessage(activeMessage === flower.id ? null : flower.id)}>
 									<svg width="100" height="40" viewBox="0 0 100 40" className="absolute bottom-[65%] left-1/2 -translate-x-1/2 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 overflow-visible">
 										<path id={pathId} d="M 5 35 Q 50 10 95 35" fill="transparent" />
-										<text width="100" className="font-serif italic text-ink text-[9px] drop-shadow-sm"><textPath href={`${filterUrl.replace(`url(`, '').replace(`)`, '').split('#')[0]}#${pathId}`} startOffset="50%" textAnchor="middle">Planted by {flower.name}</textPath></text>
+										<text width="100" className="font-serif italic text-slate text-[9px]"><textPath href={`${filterUrl.replace(`url(`, '').replace(`)`, '').split('#')[0]}#${pathId}`} startOffset="50%" textAnchor="middle">Planted by {flower.name}</textPath></text>
 									</svg>
 									<div className="w-10 h-10 md:w-14 md:h-14 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
 										<img src={FLOWER_IMAGES[flower.flowerIdx]} alt="Planted flower" className="w-full h-full object-contain pointer-events-none drop-shadow-md" draggable="false" />

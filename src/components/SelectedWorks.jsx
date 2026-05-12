@@ -253,8 +253,8 @@ export default function SelectedWorks() {
 							<p className="font-sans text-slate leading-relaxed text-lg max-w-lg">
 								A nostalgic nod to early digital cameras. PocketPix turns your browser into a classic 2000s Sony Cyber-shot digital camera. You can cycle through different Y2K filters, snap photos, and save them to your gallery.
 							</p>
-							<a href="/work/pocketpix" className="squiggly-underline w-fit inline-flex items-center gap-4 text-md font-serif italic text-ink hover:text-slate transition-colors mt-2">
-								Read More
+							<a href="https://pocketpix.vercel.app/" target="_blank" className="squiggly-underline w-fit inline-flex items-center gap-4 text-md font-serif italic text-ink hover:text-slate transition-colors mt-2">
+								View Project
 							</a>
 						</div>
 					</motion.div>
@@ -289,8 +289,8 @@ export default function SelectedWorks() {
 							<p className="font-sans text-slate leading-relaxed text-lg max-w-lg">
 								An interactive, Windows 98 themed game to teach users terminal commands! It follows a storyline where players need to fix a crashed computer system.
 							</p>
-							<a href="/work/ditch-explorer" className="squiggly-underline w-fit inline-flex items-center gap-4 text-md font-serif italic text-ink hover:text-slate transition-colors mt-2">
-								Read More
+							<a href="https://ditch-explorer.vercel.app/" target="_blank" className="squiggly-underline w-fit inline-flex items-center gap-4 text-md font-serif italic text-ink hover:text-slate transition-colors mt-2">
+								View Project
 							</a>
 						</div>
 					</motion.div>
@@ -325,8 +325,8 @@ export default function SelectedWorks() {
 							<p className="font-sans text-slate leading-relaxed text-lg max-w-lg">
 								A community-focused tracker and support space for teens navigating the process of quitting tobacco usage and vaping. Originally created for my high school's TUPE committee's Take Down Tobacco Multimedia Competition as well as Hack Club's Sleepover event.
 							</p>
-							<a href="/work/new-leaf" className="squiggly-underline w-fit inline-flex items-center gap-4 text-md font-serif italic text-ink hover:text-slate transition-colors mt-2">
-								Read More
+							<a href="https://new-leaf-seven.vercel.app/" target='_blank' className="squiggly-underline w-fit inline-flex items-center gap-4 text-md font-serif italic text-ink hover:text-slate transition-colors mt-2">
+								View Project
 							</a>
 						</div>
 					</motion.div>
