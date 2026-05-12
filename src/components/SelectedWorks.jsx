@@ -30,16 +30,16 @@ function ScatterItem({ scrollYProgress, scatterProgress, children, xVals, yVals,
 	const y = useTransform(scatterProgress, [0, 1], yVals);
 	const rotate = useTransform(scatterProgress, [0, 1], rVals);
 	const opacity = useTransform(scrollYProgress, [0.79, 0.81, 0.97, 0.99], [0, 1, 1, 0]);
-	const pointerEvents = useTransform(scrollYProgress, v => (v > 0.80 && v < 0.98) ? "auto" : "none");
+	const pointerEvents = useTransform(scrollYProgress, v => (v > 0.80 && v < 0.90) ? "auto" : "none");
 
 	return (
 		<motion.div
 			style={{ x, y, rotate, opacity, pointerEvents }}
-			className={`absolute top-0 left-0 z-20 ${size} will-change-transform`}>
+			className={`absolute top-0 left-0 z-20 ${size} will-change-transform pointer-events-none`}>
 			<motion.div
 				drag
 				whileDrag={{ scale: 1.1, zIndex: 50 }}
-				className="w-full h-full cursor-grab active:cursor-grabbing"
+				className="w-full h-full cursor-grab active:cursor-grabbing pointer-events-auto"
 			>
 				{children}
 			</motion.div>
@@ -168,10 +168,10 @@ function ExploreTinkering({ scrollYProgress }) {
 				/>
 			</ScatterItem>
 
-			<motion.a href="/work" style={{ opacity: textOpacity, pointerEvents: textPointerEvents }} className="absolute z-50 flex flex-col items-center justify-center group cursor-pointer text-white">
-				<h2 className="text-3xl md:text-5xl font-serif italic mb-2 group-hover:text-white/80 transition-colors duration-300">See What I'm Tinkering</h2>
+			<motion.a href="/fieldnotes" style={{ opacity: textOpacity }} className="absolute z-50 flex flex-col items-center justify-center group cursor-pointer text-white pointer-events-auto">
+				<h2 className="text-3xl md:text-5xl font-serif italic mb-2 group-hover:text-white/80 transition-colors duration-300">See What I'm Tinkering!</h2>
 				<p className="text-xs md:text-sm uppercase tracking-widest font-sans flex items-center gap-2 mt-2">
-					<span className="squiggly-underline decoration-white/70 group-hover:decoration-white transition-colors">View In-Progress Projects</span>
+					<span className="squiggly-underline decoration-white/70 group-hover:decoration-white transition-colors">Read my Field Notes</span>
 					<span className="transition-transform duration-300 group-hover:translate-x-3">→</span>
 				</p>
 			</motion.a>

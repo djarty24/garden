@@ -24,13 +24,10 @@ export default function Navigation() {
 	};
 
 	const handleLinkClick = (e, path, isExternal) => {
-		// 1. ALWAYS close the menu first, no matter what link is clicked
 		setIsOpen(false);
 
-		// 2. If it's an external link (like the CV), stop here and let the browser open it
 		if (isExternal) return;
 
-		// 3. Handle smooth scrolling for anchor links on the homepage
 		if (path === '/#about' && window.location.pathname === '/') {
 			e.preventDefault();
 			const aboutSection = document.getElementById('about');
@@ -49,7 +46,7 @@ export default function Navigation() {
 	const links = [
 		{ name: 'Home', path: '/' },
 		{ name: 'About', path: '/#about' },
-		{ name: 'Work', path: '/work' },
+		{ name: 'Work', path: '/#work' },
 		{ name: 'Field Notes', path: '/fieldnotes' },
 		{ name: 'Guest Book', path: '/guestbook' },
 		{ name: 'Download CV', path: '/cv.pdf', isExternal: true },

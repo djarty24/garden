@@ -54,7 +54,7 @@ export default function About() {
 				>
 					researching BCIs
 				</span>
-				, working on KiCad schematics (currently participating in <a href="https://stasis.hackclub.com/" className="font-bold text-[#88ad82] squiggly-underline hover:text-[#B8E2B0] transition-colors">Hack Club's Stasis</a> event!), and over-engineering everything I own when I should be doing homework. Any space where tech can be used for good, I'm there.
+				, working on KiCad schematics (currently participating in <a href="https://stasis.hackclub.com/" target='_blank' className="font-bold text-[#88ad82] squiggly-underline hover:text-[#B8E2B0] transition-colors">Hack Club's Stasis</a> event!), and over-engineering everything I own when I should be doing homework. Any space where tech can be used for good, I'm there.
 			</p>
 			<p>
 				My work is often inspired by&nbsp;

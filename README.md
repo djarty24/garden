@@ -116,7 +116,18 @@ This is an hour by hour log of everything I worked on and when each feature was 
         * Added a custom code snippet styling theme (rose-pine-dawn)
     * Installed `rehype-external-links` to automatically open all links in a new tab
     * Added a back button to blog posts to take you to main field notes page
-22. 
+22. Rerouted links in navbar and fixed Selected Works link error
+    * Decided to delete separate work page
+    * Created a tagging feature for my field notes instead and linked that in the selected works feature
+    * Started selected works project writeups (for ditch explorer, new leaf, and pocketpix)
+    * Fixed hero & navbar navigation to redirect to the works section instead of works page
+23. 
+
+TBD:
+    1. writeups for each selected work
+    2. google analytics/some sort of tracking metrics, update images on hover effect
+    3. finalize readme & deploy to vercel
+    4. maybe set up custom domain?
 
 ---
 <div align="center">
