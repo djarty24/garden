@@ -100,8 +100,8 @@ export default function About() {
 			{showFunPhoto && (
 				<img 
 					src="/about/fun-preview.png" 
-					alt="Fun Preview" 
-					className="fixed w-48 h-auto object-contain pointer-events-none drop-shadow-lg z-50 rounded rotate-16"
+					alt="Fun Preview"
+					className="fixed w-48 h-auto object-contain pointer-events-none drop-shadow-lg z-50 rounded -rotate-8"
 					style={photoStyle} 
 				/>
 			)}

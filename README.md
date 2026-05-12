@@ -3,12 +3,28 @@
 This is my personal website! I've tried to make it a cozy corner of the Internet filled with tidbits of who I am as a person.
 
 ## Features
-* add later
+* An interactive home page with about, work, and contact sections
+* A custom guestbook where visitors can plant a flower in my digital garden and leave me a message
+* A markdown-based blogging system built on file-based routing to track all of my ideas
+    * Blog includes a tagging system to organize posts and make them easier to find
+* Lots of interactive, hand drawn animations to make my site fun!
 
 ## Tech Stack
 A list of the toools used to build my website:
 1. Astro.js
-rehype-external-links
+    * Main framework used to built my static site
+2. React
+    * Used to built the guestbook as it required client-side components
+3. Tailwind CSS v4
+    * Used for all of the styling
+4. Framer Motion
+    * Handled all of the animations and UI transitions
+5. Firestore Firebase
+    * The backend database to securely store guestbook messages
+6. [Shiki](https://shiki.style/)
+    * Provided beautiful syntax highlighting for codeblocks in my field notes/blog
+7. [rehype-external-links](https://github.com/rehypejs/rehype-external-links)
+    * A plugin used to automatically make all of my markdown links open in new tabs
 
 ## Developer Log (for Hack Club's Sleepover event!)
 This is an hour by hour log of everything I worked on and when each feature was implemented.
@@ -127,7 +143,9 @@ This is an hour by hour log of everything I worked on and when each feature was 
     * Error with perms for firebase once app was actually deployed, fixed those
         * Added my env variables to my Vercel project
     * Did some file cleanup for unnecessary files
-24. 
+24. Finishing touches
+    * Updated README
+    * Added loading in animations for field notes page
 
 
 ---
