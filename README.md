@@ -139,14 +139,18 @@ This is an hour by hour log of everything I worked on and when each feature was 
     * Fixed hero & navbar navigation to redirect to the works section instead of works page
 23. Set up analytics with [Umami](https://umami.is/)
     * Super simple to set up - just deployed my site on Vercel
-    * Added to Umami dashboard
+    * Added to Umami dashboards
     * Error with perms for firebase once app was actually deployed, fixed those
         * Added my env variables to my Vercel project
     * Did some file cleanup for unnecessary files
 24. Finishing touches
     * Updated README
     * Added loading in animations for field notes page
-
+25. Made site responsive!
+    * Fixed homepage so that the text stays centered and hero navigation becomes horizontal on mobile
+    * Fixed the about section to reduce padding and center text
+    * Tweaked selected works to remove animations on mobile and make it clearere
+    * Reduced text size on mobile of the contact section
 
 ---
 <div align="center">

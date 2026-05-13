@@ -1,6 +1,6 @@
 export default function Footer() {
 	return (
-		<footer className="relative w-full pt-8 pb-12 bg-[#FDF1F3] flex flex-col items-center justify-center z-50">
+		<footer className="relative w-full pt-8 pb-12 bg-[#FDF1F3] flex flex-col items-center justify-center z-50 px-4">
 			
 			<svg 
 				className="w-full h-12 md:h-16 absolute top-0 left-0 translate-y-[-99%] z-50 pointer-events-none" 
@@ -13,13 +13,13 @@ export default function Footer() {
 				/>
 			</svg>
 
-			<p className="font-serif italic text-ink text-sm md:text-base flex items-center gap-3 opacity-90 hover:opacity-100 transition-opacity cursor-default mt-2">
+			<div className="font-serif italic text-ink text-xs sm:text-sm md:text-base flex flex-col md:flex-row items-center gap-1.5 md:gap-3 opacity-90 hover:opacity-100 transition-opacity cursor-default mt-2 text-center">
 				<span>© 2026</span>
-				<span className="opacity-50">~</span>
-				<span>made with &lt;3 and too much caffeine</span>
-				<span className="opacity-50">~</span>
+				<span className="opacity-50 hidden md:inline">~</span>
+				<span>made with &lt;3 and lots of coffee</span>
+				<span className="opacity-50 hidden md:inline">~</span>
 				<span>built by revati</span>
-			</p>
+			</div>
 			
 		</footer>
 	);

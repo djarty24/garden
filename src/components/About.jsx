@@ -44,7 +44,10 @@ export default function About() {
 	};
 
 	return (
-		<div onMouseMove={handleMouseMove} className="flex flex-col gap-6 font-sans leading-relaxed text-ink text-lg max-w-xl">
+		<div onMouseMove={handleMouseMove} className="flex flex-col gap-4 md:gap-6 font-sans leading-relaxed text-ink text-base md:text-lg max-w-xl mx-auto lg:mx-0">
+			
+			<h2 className="text-3xl md:text-4xl font-serif text-ink mb-2">A Bit About Me</h2>
+			
 			<p>
 				I'm a high school senior based in the Bay Area, CA. As of now I spend most of my time&nbsp;
 				<span 

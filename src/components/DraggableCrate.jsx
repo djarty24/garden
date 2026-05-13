@@ -91,9 +91,9 @@ export default function DraggableCrate() {
 	};
 
 	return (
-		<div className="relative w-full h-full flex flex-col items-center justify-center p-8 min-h-125">
+		<div className="relative w-full h-full flex flex-col items-center justify-center px-4 py-8 lg:p-8 min-h-[400px] lg:min-h-125 -mt-4 lg:mt-0">
 			
-			<div className="text-center mb-16 z-40">
+			<div className="text-center mb-10 lg:mb-16 z-40">
 				<h3 className="font-serif italic text-2xl text-ink mb-4">What's Playing</h3>
 				<div className="w-16 h-px bg-slate/20 mx-auto"></div>
 			</div>

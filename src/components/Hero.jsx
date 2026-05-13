@@ -74,56 +74,65 @@ export default function Hero() {
 	};
 
 	return (
-		<div className="w-full grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-16 lg:gap-24 items-center max-w-360 mx-auto">
-			<nav className="flex flex-col gap-8 items-center lg:items-end w-full">
-				<motion.a 
-					href="/#about" 
-					onClick={handleAboutClick}
+		<div className="w-full grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-12 lg:gap-24 items-center max-w-360 mx-auto pt-8 lg:pt-0">
+			<nav className="flex flex-row lg:flex-col gap-4 md:gap-8 lg:gap-8 justify-center items-end lg:items-end w-full px-4 lg:px-0">
+				<motion.div
 					initial={{ opacity: 0, x: 150, y: 100 }}
-					animate={{ opacity: 1, x: 48, y: 0 }}
+					animate={{ opacity: 1, x: 0, y: 0 }}
 					transition={{ duration: 1, delay: stage3Delay, type: "spring", bounce: 0.3 }}
-					className="flex flex-col items-center gap-5 group"
 				>
-					<div className="w-24 h-24 shrink-0 flex items-center justify-center">
-						<img src="/hero/about-icon.png" alt="About" className="w-full h-full object-contain drop-shadow-sm transition-all duration-300 ease-out group-hover:scale-[1.35] group-hover:-rotate-12 group-hover:drop-shadow-md"/>
-					</div>
-					<span className="text-base text-ink font-serif italic">About</span>
-				</motion.a>
+					<a 
+						href="/#about" 
+						onClick={handleAboutClick}
+						className="flex flex-col items-center gap-3 lg:gap-5 group lg:translate-x-12"
+					>
+						<div className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 shrink-0 flex items-center justify-center">
+							<img src="/hero/about-icon.png" alt="About" className="w-full h-full object-contain drop-shadow-sm transition-all duration-300 ease-out group-hover:scale-[1.35] group-hover:-rotate-12 group-hover:drop-shadow-md"/>
+						</div>
+						<span className="text-xs md:text-sm lg:text-base text-ink font-serif italic">About</span>
+					</a>
+				</motion.div>
 
-				<motion.a 
-					href="/#work" 
+				<motion.div
 					initial={{ opacity: 0, x: 150, y: 0 }}
-					animate={{ opacity: 1, x: -16, y: 0 }}
+					animate={{ opacity: 1, x: 0, y: 0 }}
 					transition={{ duration: 1, delay: stage3Delay + 0.1, type: "spring", bounce: 0.3 }}
-					className="flex flex-col items-center gap-5 group"
 				>
-					<div className="w-24 h-24 shrink-0 flex items-center justify-center">
-						<img src="/hero/work-icon.png" alt="Work" className="w-full h-full object-contain drop-shadow-sm transition-all duration-300 ease-out group-hover:scale-[1.35] group-hover:-rotate-12 group-hover:drop-shadow-md"/>
-					</div>
-					<span className="text-base text-ink font-serif italic">Work</span>
-				</motion.a>
+					<a 
+						href="/#work" 
+						className="flex flex-col items-center gap-3 lg:gap-5 group lg:-translate-x-4"
+					>
+						<div className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 shrink-0 flex items-center justify-center">
+							<img src="/hero/work-icon.png" alt="Work" className="w-full h-full object-contain drop-shadow-sm transition-all duration-300 ease-out group-hover:scale-[1.35] group-hover:-rotate-12 group-hover:drop-shadow-md"/>
+						</div>
+						<span className="text-xs md:text-sm lg:text-base text-ink font-serif italic">Work</span>
+					</a>
+				</motion.div>
 
-				<motion.a
-					href="/cv.pdf" 
-					target='_blank'
+				<motion.div
 					initial={{ opacity: 0, x: 150, y: -100 }}
-					animate={{ opacity: 1, x: 48, y: 0 }}
+					animate={{ opacity: 1, x: 0, y: 0 }}
 					transition={{ duration: 1, delay: stage3Delay + 0.2, type: "spring", bounce: 0.3 }}
-					className="flex flex-col items-center gap-5 group"
 				>
-					<div className="w-24 h-24 shrink-0 flex items-center justify-center">
-						<img src="/hero/cv-icon.png" alt="Download CV" className="w-full h-full object-contain drop-shadow-sm transition-all duration-300 ease-out group-hover:scale-[1.35] group-hover:-rotate-12 group-hover:drop-shadow-md"/>
-					</div>
-					<span className="text-base text-ink font-serif italic">Download CV</span>
-				</motion.a>
+					<a
+						href="/cv.pdf" 
+						target='_blank'
+						className="flex flex-col items-center gap-3 lg:gap-5 group lg:translate-x-12"
+					>
+						<div className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 shrink-0 flex items-center justify-center">
+							<img src="/hero/cv-icon.png" alt="Download CV" className="w-full h-full object-contain drop-shadow-sm transition-all duration-300 ease-out group-hover:scale-[1.35] group-hover:-rotate-12 group-hover:drop-shadow-md"/>
+						</div>
+						<span className="text-xs md:text-sm lg:text-base text-ink font-serif italic">Download CV</span>
+					</a>
+				</motion.div>
 			</nav>
 
-			<main onMouseMove={handleMouseMove} className="text-center px-4 flex flex-col items-center max-w-xl mx-auto w-full relative z-10">
+			<main onMouseMove={handleMouseMove} className="text-center px-4 flex flex-col items-center max-w-xl mx-auto w-full relative z-10 py-8 lg:py-0">
 				<motion.p 
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
 					transition={{ duration: 0.8, delay: stage2Delay }}
-					className="text-sm mb-8 text-slate italic font-serif"
+					className="text-xs md:text-sm mb-6 md:mb-8 text-slate italic font-serif text-center"
 				>
 					Welcome to my digital home!
 				</motion.p>
@@ -132,24 +141,25 @@ export default function Hero() {
 					initial={{ opacity: 0, y: 15 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.8, delay: stage1Delay, ease: "easeOut" }}
-					className="text-4xl leading-normal font-serif text-ink"
+					className="text-2xl md:text-3xl lg:text-4xl leading-relaxed lg:leading-normal font-serif text-ink text-center"
 				>
-					Hi, I&#x2019;m&nbsp;
-					<span 
+					Hi, I&#x2019;m <span 
 						className="squiggly-underline cursor-none text-ink hover:text-slate transition-colors" 
 						onMouseEnter={() => setShowNamePhoto(true)}
 						onMouseLeave={() => setShowNamePhoto(false)}
 					>
 						Revati
-					</span>, a student, developer, and&nbsp;
-					<span 
+					</span>, a student,
+					<br />
+					developer, and <span 
 						className="squiggly-underline cursor-none text-ink hover:text-slate transition-colors" 
 						onMouseEnter={() => setShowMakerPhoto(true)}
 						onMouseLeave={() => setShowMakerPhoto(false)}
 					>
 						maker
-					</span>&nbsp;exploring&nbsp;
-					<span 
+					</span>
+					<br />
+					exploring <span 
 						className="cursor-none text-ink hover:text-slate transition-colors" 
 						onMouseEnter={() => setShowIdeasPhoto(true)}
 						onMouseLeave={() => setShowIdeasPhoto(false)}
@@ -157,7 +167,7 @@ export default function Hero() {
 						<span className="squiggly-underline">unconventional</span>
 						<br />
 						<span className="squiggly-underline">ideas</span>
-					</span>&nbsp;through code.
+					</span> through code.
 				</motion.h1>
 
 				<motion.div 
@@ -165,7 +175,7 @@ export default function Hero() {
 					animate={{ opacity: 1 }}
 					transition={{ duration: 0.8, delay: stage2Delay }}
 					onClick={handleVinylClick}
-					className="mt-12 flex items-center gap-12 group cursor-pointer relative"
+					className="mt-12 hidden lg:flex items-center gap-12 group cursor-pointer relative"
 				>
 					<span className="text-sm font-serif italic text-ink transition-all duration-300 group-hover:-translate-y-0.5 group-hover:-translate-x-1 group-hover:scale-105">
 						let's go
@@ -211,73 +221,84 @@ export default function Hero() {
 					</div>
 				</motion.div>
 
-				{showNamePhoto && (
-					<img 
-						src="/hero/polaroid.png" 
-						alt="A polaroid photo of me" 
-						className="fixed w-48 h-auto object-contain pointer-events-none drop-shadow-lg z-50 rounded -rotate-6"
-						style={photoStyle} 
-					/>
-				)}
+				<div className="hidden lg:block">
+					{showNamePhoto && (
+						<img 
+							src="/hero/polaroid.png" 
+							alt="A polaroid photo of me" 
+							className="fixed w-48 h-auto object-contain pointer-events-none drop-shadow-lg z-50 rounded -rotate-6"
+							style={photoStyle} 
+						/>
+					)}
 
-				{showMakerPhoto && (
-					<img 
-						src="/hero/maker-preview.png" 
-						alt="A preview of my maker projects" 
-						className="fixed w-48 h-auto object-contain pointer-events-none drop-shadow-lg z-50 rounded rotate-6"
-						style={photoStyle} 
-					/>
-				)}
+					{showMakerPhoto && (
+						<img 
+							src="/hero/maker-preview.png" 
+							alt="A preview of my maker projects" 
+							className="fixed w-48 h-auto object-contain pointer-events-none drop-shadow-lg z-50 rounded rotate-6"
+							style={photoStyle} 
+						/>
+					)}
 
-				{showIdeasPhoto && (
-					<img 
-						src="/hero/unconventional-ideas-preview.png" 
-						alt="A preview of unconventional ideas" 
-						className="fixed w-48 h-auto object-contain pointer-events-none drop-shadow-lg z-50 rounded -rotate-6"
-						style={photoStyle} 
-					/>
-				)}
+					{showIdeasPhoto && (
+						<img 
+							src="/hero/unconventional-ideas-preview.png" 
+							alt="A preview of unconventional ideas" 
+							className="fixed w-48 h-auto object-contain pointer-events-none drop-shadow-lg z-50 rounded -rotate-6"
+							style={photoStyle} 
+						/>
+					)}
+				</div>
 			</main>
 
-			<nav className="flex flex-col gap-8 items-center lg:items-start w-full">
-				<motion.a 
-					href="/fieldnotes" 
+			<nav className="flex flex-row lg:flex-col gap-4 md:gap-8 lg:gap-8 justify-center items-start lg:items-start w-full px-4 lg:px-0">
+				<motion.div
 					initial={{ opacity: 0, x: -150, y: 100 }}
-					animate={{ opacity: 1, x: -48, y: 0 }}
+					animate={{ opacity: 1, x: 0, y: 0 }}
 					transition={{ duration: 1, delay: stage3Delay, type: "spring", bounce: 0.3 }}
-					className="flex flex-col items-center gap-5 group"
 				>
-					<div className="w-24 h-24 shrink-0 flex items-center justify-center">
-						<img src="/hero/fieldnotes-icon.png" alt="Field Notes" className="w-full h-full object-contain drop-shadow-sm transition-all duration-300 ease-out group-hover:scale-[1.35] group-hover:rotate-12 group-hover:drop-shadow-md"/>
-					</div>
-					<span className="text-base text-ink font-serif italic">Field Notes</span>
-				</motion.a>
+					<a 
+						href="/fieldnotes" 
+						className="flex flex-col items-center gap-3 lg:gap-5 group lg:-translate-x-12"
+					>
+						<div className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 shrink-0 flex items-center justify-center">
+							<img src="/hero/fieldnotes-icon.png" alt="Field Notes" className="w-full h-full object-contain drop-shadow-sm transition-all duration-300 ease-out group-hover:scale-[1.35] group-hover:rotate-12 group-hover:drop-shadow-md"/>
+						</div>
+						<span className="text-xs md:text-sm lg:text-base text-ink font-serif italic">Field Notes</span>
+					</a>
+				</motion.div>
 
-				<motion.a 
-					href="/guestbook" 
+				<motion.div
 					initial={{ opacity: 0, x: -150, y: 0 }}
-					animate={{ opacity: 1, x: 16, y: 0 }}
+					animate={{ opacity: 1, x: 0, y: 0 }}
 					transition={{ duration: 1, delay: stage3Delay + 0.1, type: "spring", bounce: 0.3 }}
-					className="flex flex-col items-center gap-5 group"
 				>
-					<div className="w-24 h-24 shrink-0 flex items-center justify-center">
-						<img src="/hero/guestbook-icon.png" alt="Guest Book" className="w-full h-full object-contain drop-shadow-sm transition-all duration-300 ease-out group-hover:scale-[1.35] group-hover:rotate-12 group-hover:drop-shadow-md"/>
-					</div>
-					<span className="text-base text-ink font-serif italic">Guest Book</span>
-				</motion.a>
+					<a 
+						href="/guestbook" 
+						className="flex flex-col items-center gap-3 lg:gap-5 group lg:translate-x-4"
+					>
+						<div className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 shrink-0 flex items-center justify-center">
+							<img src="/hero/guestbook-icon.png" alt="Guest Book" className="w-full h-full object-contain drop-shadow-sm transition-all duration-300 ease-out group-hover:scale-[1.35] group-hover:rotate-12 group-hover:drop-shadow-md"/>
+						</div>
+						<span className="text-xs md:text-sm lg:text-base text-ink font-serif italic">Guest Book</span>
+					</a>
+				</motion.div>
 
-				<motion.a 
-					href="/#contact"
+				<motion.div
 					initial={{ opacity: 0, x: -150, y: -100 }}
-					animate={{ opacity: 1, x: -48, y: 0 }}
+					animate={{ opacity: 1, x: 0, y: 0 }}
 					transition={{ duration: 1, delay: stage3Delay + 0.2, type: "spring", bounce: 0.3 }}
-					className="flex flex-col items-center gap-5 group"
 				>
-					<div className="w-24 h-24 shrink-0 flex items-center justify-center">
-						<img src="/hero/contact-icon.png" alt="Contact" className="w-full h-full object-contain drop-shadow-sm transition-all duration-300 ease-out group-hover:scale-[1.35] group-hover:rotate-12 group-hover:drop-shadow-md"/>
-					</div>
-					<span className="text-base text-ink font-serif italic">Contact</span>
-				</motion.a>
+					<a 
+						href="/#contact"
+						className="flex flex-col items-center gap-3 lg:gap-5 group lg:-translate-x-12"
+					>
+						<div className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 shrink-0 flex items-center justify-center">
+							<img src="/hero/contact-icon.png" alt="Contact" className="w-full h-full object-contain drop-shadow-sm transition-all duration-300 ease-out group-hover:scale-[1.35] group-hover:rotate-12 group-hover:drop-shadow-md"/>
+						</div>
+						<span className="text-xs md:text-sm lg:text-base text-ink font-serif italic">Contact</span>
+					</a>
+				</motion.div>
 			</nav>
 		</div>
 	);
