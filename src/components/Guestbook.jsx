@@ -132,7 +132,7 @@ export default function GardenCanvas() {
 					<div className="absolute inset-0 w-full h-full rounded-full border-[1.5px] border-ink group-hover:border-[#c88d9a] group-hover:bg-[#FDF1F3] transition-colors duration-300 pointer-events-none" style={{ filter: filterUrl }} />
 					<span className="relative z-10 font-sans text-[10px] md:text-xs tracking-widest uppercase text-ink group-hover:text-[#c88d9a] transition-colors duration-300">Write a Message</span>
 				</button>
-				<p className="text-[10px] md:text-xs font-serif italic text-slate/80">{totalFlowers} flowers have been planted in my garden!</p>
+				<p className="text-[10px] md:text-xs font-serif italic text-slate/80">{totalFlowers} flowers have been planted in this digital garden!</p>
 			</div>
 
 			<div className="w-full max-w-6xl mx-auto grow flex flex-col items-center justify-start z-10">
