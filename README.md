@@ -26,7 +26,7 @@ A list of the toools used to build my website:
 7. [rehype-external-links](https://github.com/rehypejs/rehype-external-links)
     * A plugin used to automatically make all of my markdown links open in new tabs
 
-## Developer Log (for Hack Club's Sleepover event!)
+## Developer Log (for Hack Club's Sleepover event! Anything after hour 25 is for Hack Club's Horizons.)
 This is an hour by hour log of everything I worked on and when each feature was implemented.
 
 1. Mostly project set up
@@ -151,6 +151,11 @@ This is an hour by hour log of everything I worked on and when each feature was 
     * Fixed the about section to reduce padding and center text
     * Tweaked selected works to remove animations on mobile and make it clearere
     * Reduced text size on mobile of the contact section
+26. Starting this hour, I'm shipping all updates to Horizons
+    * Fixed Umami setup by adding the actual metadata tags
+    * Set up basic SEO
+        * Generated a sitemap and added description prop for every page
+    * Set up a custom domain name
 
 ---
 <div align="center">

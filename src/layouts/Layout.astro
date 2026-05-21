@@ -4,7 +4,11 @@ import "../styles/global.css";
 import Navigation from "../components/Navigation.jsx";
 import Footer from "../components/Footer";
 
-const { bgClass = "bg-canvas text-ink" } = Astro.props;
+const {
+	bgClass = "bg-canvas text-ink",
+	title = "Revati's Studio",
+	description = "Welcome to my corner of the web! Here you'll find a collection of my observations, experiments, unconventional ideas, and more.",
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -12,7 +16,14 @@ const { bgClass = "bg-canvas text-ink" } = Astro.props;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Revati's Studio</title>
+
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:type" content="website" />
+
+		<meta name="google-site-verification" content="J_RBNs18pZGRAdcgSIh_kpqy4qm9rlgn3DgXPoeShSk" />
 
 		<ClientRouter />
 
@@ -23,11 +34,13 @@ const { bgClass = "bg-canvas text-ink" } = Astro.props;
 			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
 			rel="stylesheet"
 		/>
-		<script defer src="https://cloud.umami.is/script.js" data-website-id="7dfa783d-ab7e-46e2-9124-37fdf1c09114"></script>
+		<script
+			defer
+			src="https://cloud.umami.is/script.js"
+			data-website-id="7dfa783d-ab7e-46e2-9124-37fdf1c09114"></script>
 	</head>
-	<body
-		class={`min-h-screen relative selection:bg-mint font-sans transition-colors duration-700 ease-in-out ${bgClass}`}
-	>
+
+	<body class={`min-h-screen relative selection:bg-mint font-sans transition-colors duration-700 ease-in-out ${bgClass}`}>
 		<div transition:persist>
 			<Navigation client:load />
 		</div>
@@ -35,6 +48,7 @@ const { bgClass = "bg-canvas text-ink" } = Astro.props;
 		<main class="relative z-10">
 			<slot />
 		</main>
+
 		<div>
 			<Footer />
 		</div>
